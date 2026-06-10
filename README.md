@@ -1,3 +1,5 @@
+# shopify-store
+
 # PROOF Display — Test Store Validation
 
 Architecture validation environment for the PROOF Display Shopify storefront.

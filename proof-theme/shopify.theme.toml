@@ -1,0 +1,2 @@
+[environments.development]
+store = "proof-test-dev.myshopify.com"

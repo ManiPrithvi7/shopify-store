@@ -4,5 +4,7 @@ node_modules/
 .env*.local
 .DS_Store
 proof-theme/assets/.vite/
+proof-theme/node_modules/
 proof-api/.next/
 proof-api/.vercel/
+proof-api/node_modules/
