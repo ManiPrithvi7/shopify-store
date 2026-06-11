@@ -1,0 +1,78 @@
+{% render 'proof-checkout-url', section: section %}
+
+<section
+  class="proof-app-zone s"
+  id="proof-app-zone"
+  aria-label="{{ section.settings.heading | escape }}"
+  {{ section.shopify_attributes }}
+>
+  <div class="inner">
+    {%- if section.settings.heading != blank -%}
+      <div class="eyebrow">{{ section.settings.heading }}</div>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="sub proof-app-zone__sub">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="proof-app-zone__grid proof-app-zone__grid--{{ section.settings.layout }}">
+      {%- for block in section.blocks -%}
+        <div
+          class="proof-app-zone__card"
+          id="proof-app-block-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          {% render block %}
+        </div>
+      {%- else -%}
+        <div class="proof-app-zone__placeholder">
+          <p class="proof-app-zone__placeholder-title">App widgets</p>
+          <p class="proof-app-zone__placeholder-text">
+            Theme Editor → this section → <strong>Add block</strong> → choose an app (e.g. Judge.me, Sales Pop).
+          </p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PROOF App zone",
+  "tag": "section",
+  "class": "proof-app-zone-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted by merchants"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Live reviews and social proof from installed Shopify apps."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "single", "label": "Single column" },
+        { "value": "split", "label": "Two columns" }
+      ],
+      "default": "single"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PROOF App zone"
+    }
+  ]
+}
+{% endschema %}

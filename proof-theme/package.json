@@ -4,10 +4,12 @@
   "description": "[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)",
   "type": "commonjs",
   "scripts": {
-    "dev": "run-p -sr \"shopify:dev -- {@}\" \"vite:dev\" --",
-    "deploy": "run-s \"vite:build\" \"shopify:push -- {@}\" --",
-    "shopify:dev": "shopify theme dev",
-    "shopify:push": "shopify theme push",
+    "dev": "run-p -sr shopify:dev vite:dev",
+    "deploy": "run-s vite:build shopify:push",
+    "shopify:dev": "shopify theme dev --environment development --ignore \"assets/.vite/**\"",
+    "postvite:build": "rm -rf assets/.vite",
+    "shopify:push": "shopify theme push --environment development",
+    "auth": "shopify auth login",
     "vite:dev": "vite",
     "vite:build": "vite build"
   },

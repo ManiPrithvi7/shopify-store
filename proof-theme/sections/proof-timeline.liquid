@@ -1,0 +1,97 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ 30 DAYS TIMELINE ══ -->
+<section class="s" style="background:var(--surface-base);" id="timeline">
+  <div class="inner">
+    <div class="eyebrow">Your first 30 days</div>
+    <h2>What your first month<br><em>actually looks like.</em></h2>
+    <p class="sub" style="margin-top:12px;max-width:440px;">PROOF works quietly in the background. Here's what most merchants notice, week by week.</p>
+
+    <div class="timeline-wrap">
+
+      <div class="tl-row">
+        <div class="tl-marker">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-label">Day 1</div>
+        <div class="tl-card">
+          <div class="tl-card-title">Customers notice the display.</div>
+          <div class="tl-card-body">The LED halo and live rating draw eyes immediately. Within hours, the first customer asks about it. Your counter now has a presence it didn't have yesterday.</div>
+          <div class="tl-signal tl-signal-neutral">📱 First unprompted review often arrives within 24–48 hours</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-marker">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-label">Week 1</div>
+        <div class="tl-card">
+          <div class="tl-card-title">Review rate starts climbing.</div>
+          <div class="tl-card-body">The live feed of real reviews primes customers to add their voice. Staff start mentioning it naturally. You notice more Google notifications than usual — without asking anyone.</div>
+          <div class="tl-signal tl-signal-green">↑ Typical merchants see 2–3× review rate in week 1</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-marker">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-label">Week 2–3</div>
+        <div class="tl-card">
+          <div class="tl-card-title">Google Maps ranking improves.</div>
+          <div class="tl-card-body">Google's algorithm rewards recency and review velocity. Your business starts appearing higher in "coffee near me" results. New visitors start arriving who found you through search — not word of mouth.</div>
+          <div class="tl-signal tl-signal-green">↑ Maps ranking typically improves within 2–3 weeks of sustained velocity</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-marker">
+          <div class="tl-dot tl-dot-gold"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-label">Month 1</div>
+        <div class="tl-card tl-card-gold">
+          <div class="tl-card-title">New customers arrive because of your reviews.</div>
+          <div class="tl-card-body">The flywheel is turning. Your organic search traffic grows. New customers arrive already convinced — they saw your rating before they walked in. First-time visitors convert faster and spend more.</div>
+          <div class="tl-signal tl-signal-gold">🎉 Most merchants hit their first milestone by end of month 1</div>
+        </div>
+      </div>
+
+      <div class="tl-row tl-row-last">
+        <div class="tl-marker">
+          <div class="tl-dot tl-dot-gold"></div>
+        </div>
+        <div class="tl-label">Month 2+</div>
+        <div class="tl-card tl-card-gold">
+          <div class="tl-card-title">Compounding credibility.</div>
+          <div class="tl-card-body">Every new review brings the next customer. Your reputation now works 24 hours a day — on Google Maps, in person, and on every platform your reviews appear. PROOF keeps the flywheel spinning.</div>
+          <div class="tl-signal tl-signal-gold">📈 Average 6-month review count: 3.2× starting count</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:56px;">
+      <a href="{{ product_url }}" class="btn btn-gold btn-gold-lg">Order PROOF — $499 →</a>
+      <p style="font-size:12px;color:var(--smoke);margin-top:16px;">60-day money-back guarantee. If it doesn't work, full refund.</p>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Timeline",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Timeline" }]
+}
+{% endschema %}

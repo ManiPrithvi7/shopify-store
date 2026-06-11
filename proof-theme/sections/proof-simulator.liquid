@@ -1,0 +1,54 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ ROI SIMULATOR ══ -->
+<section class="s sim" id="simulator" aria-label="ROI Calculator — review growth projection">
+  <div class="inner" style="text-align:center;">
+    <div class="eyebrow" style="justify-content:center;">Your projection</div>
+    <h2>What does PROOF look like<br><em>for your business?</em></h2>
+    <p class="sub" style="max-width:440px;margin:16px auto 0;">Enter your numbers. See a projection tailored to your business — not a generic estimate.</p>
+    <div class="sim-wrap">
+      <div class="sim-inputs" style="grid-template-columns:1fr 1fr 1fr;gap:16px;">
+        <div class="sim-field" style="grid-column:1/-1;">
+          <label>Your Business Name <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(92,92,87,.5);">(optional — personalises your results)</span></label>
+          <input type="text" id="biz-name" placeholder="e.g. Hearthside Coffee" oninput="calcSim()">
+        </div>
+        <div class="sim-field"><label>Current Google Reviews</label><input type="number" id="cur-reviews" value="47" min="1" oninput="calcSim()"></div>
+        <div class="sim-field"><label>Daily Customers (est.)</label><input type="number" id="daily-cust" value="80" min="1" oninput="calcSim()"></div>
+        <div class="sim-field"><label>Current Star Rating</label><input type="number" id="cur-rating" value="4.3" min="1" max="5" step="0.1" oninput="calcSim()"></div>
+      </div>
+      <div class="sim-results" id="sim-results"></div>
+      <div class="sim-inline-cta" id="sim-cta">
+        <div>
+          <div class="sim-cta-text">Ready to start compounding?</div>
+          <div class="sim-cta-sub" id="sim-cta-sub"></div>
+        </div>
+        <a href="{{ product_url }}" class="btn btn-gold" style="white-space:nowrap;flex-shrink:0;">Order Now — $499 →</a>
+      </div>
+      <p class="sim-note" id="sim-note"></p>
+      <p class="sim-disclaimer">Based on real-world review rates: ~0.3% of customers leave an organic review; PROOF targets ~0.7% through in-store priming. Actual results vary by business type, traffic, and engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPEC BAR -->
+<div class="spec-bar">
+  <div class="spec-item"><div class="spec-val">Google</div><div class="spec-lbl">Google &amp; Instagram sync</div><div class="spec-det">Reviews + followers, live</div></div>
+  <div class="spec-item"><div class="spec-val">Halo</div><div class="spec-lbl">Ambient LED halo</div><div class="spec-det">Draws eyes from across the room</div></div>
+  <div class="spec-item"><div class="spec-val">WiFi</div><div class="spec-lbl">Plug-and-play install</div><div class="spec-det">No IT team, no app download</div></div>
+  <div class="spec-item"><div class="spec-val">$0/mo</div><div class="spec-lbl">No subscription required</div><div class="spec-det">Core features free forever</div></div>
+  <div class="spec-item"><div class="spec-val">≤5 min</div><div class="spec-lbl">To install</div><div class="spec-det">Working the same day</div></div>
+</div>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Simulator",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Simulator" }]
+}
+{% endschema %}

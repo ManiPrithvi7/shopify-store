@@ -1,0 +1,42 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ FOOTER ══ -->
+<footer role="contentinfo">
+  <div class="ft">
+    <div class="fb">
+      <div class="nav-logo">PROOF<span style="color:var(--gold)">.</span></div>
+      <p>The trust layer for physical businesses. Turn your reputation into a live signal that works every hour your doors are open.</p>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;">
+        <a href="{{ demo_url }}" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--neutral-700);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--neutral-500)'" onmouseout="this.style.color='var(--neutral-700)'">
+          <span style="color:var(--brand-primary);">▶</span> Watch the 90-second demo
+        </a>
+        <a href="#simulator" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--neutral-700);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--neutral-500)'" onmouseout="this.style.color='var(--neutral-700)'">
+          <span style="color:var(--brand-primary);">→</span> Calculate your review projection
+        </a>
+      </div>
+    </div>
+    <div class="fc"><h4>Product</h4><a href="#mechanism">How it Works</a><a href="#simulator">ROI Calculator</a><a href="#">Integrations</a><a href="#pricing">Pricing</a><a href="#">Changelog</a></div>
+    <div class="fc"><h4>Company</h4><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">Press</a></div>
+    <div class="fc"><h4>Support</h4><a href="#">Install Guide</a><a href="#">FAQ</a><a href="#">Contact</a><a href="#">Warranty</a><a href="#">Shipping</a></div>
+  </div>
+  <div class="fb2">
+    <span>© 2025 Proof Nexus Inc. All rights reserved.</span>
+    <div><a href="{{ shop.privacy_policy.url }}">Privacy</a><a href="{{ shop.terms_of_service.url }}">Terms</a><a href="{{ shop.refund_policy.url }}">Refund Policy</a></div>
+  </div>
+</footer>
+</div>
+
+{% schema %}
+{
+  "name": "PROOF Footer",
+  "tag": "section",
+  "class": "proof-footer-section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "demo_video_url",
+      "label": "90-sec demo link"
+    }
+  ],
+  "presets": [{ "name": "PROOF Footer" }]
+}
+{% endschema %}

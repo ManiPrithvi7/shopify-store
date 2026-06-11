@@ -1451,5 +1451,19 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "PROOF",
+    "settings": [
+      {
+        "type": "product",
+        "id": "proof_checkout_product",
+        "label": "Default checkout product (all PROOF sections)"
+      },
+      {
+        "type": "paragraph",
+        "content": "Used by V23 landing CTAs when a section does not set its own product. Enable app widgets under Theme settings → App embeds, and add app blocks to PROOF App zone / Product apps sections."
+      }
+    ]
   }
 ]

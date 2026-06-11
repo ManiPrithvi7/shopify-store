@@ -1,0 +1,48 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ WHY IT WORKS ══ -->
+<section class="s why" id="why" style="border-top:1px solid rgba(255,255,255,.04);" aria-label="Psychology — why PROOF works">
+  <div class="inner">
+    <div class="eyebrow">Psychology</div>
+    <h2>Three reasons it<br><em>actually works.</em></h2>
+    <p class="sub" style="margin-top:12px;max-width:420px;">This isn't just a display. It's a trust mechanism that works on your customers' psychology before you say a word.</p>
+    <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);margin-top:12px;max-width:420px;">Not a gimmick. Not a gadget.<br>Reputation visibility infrastructure.</p>
+    <div class="why-grid reveal-stagger">
+      <div class="why-card">
+        <div class="why-num">1</div>
+        <div class="why-icon">👥</div>
+        <h3>Social Proof</h3>
+        <p>People trust what other people say more than anything you say about yourself. A live review feed from real customers is the most credible signal you can put in front of a walk-in.</p>
+        <div class="why-proof"><strong>Cialdini's Principle of Social Proof:</strong> Humans look to others' behavior when uncertain. Your reviews on the counter remove the uncertainty before the customer forms a doubt.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">2</div>
+        <div class="why-icon">⚡</div>
+        <h3>Instant Credibility</h3>
+        <p>Customers decide in seconds whether they trust a business. No searching Google. No hunting for reviews. The answer is right there on the counter — and it's 4.9 stars.</p>
+        <div class="why-proof"><strong>Zero-friction trust:</strong> Merchants who display their rating prominently see higher average spend and lower first-visit hesitation — without any change to service.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">3</div>
+        <div class="why-icon">🔄</div>
+        <h3>The Review Flywheel</h3>
+        <p>Reputation grows faster when it's visible. Seeing other people's reviews primes customers to leave their own. More reviews improve your Google Maps ranking, which brings in more customers, who leave more reviews.</p>
+        <div class="why-proof"><strong>Compounding effect:</strong> Each review makes the next one more likely. PROOF starts the flywheel by making reviews visible and salient at the right moment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Why it works",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Why it works" }]
+}
+{% endschema %}

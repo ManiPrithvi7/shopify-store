@@ -1,0 +1,28 @@
+{% render 'proof-checkout-url', section: section %}
+<section class="fcta">
+  <div class="eyebrow" style="justify-content:center;">Ready?</div>
+  <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(184,184,173,.35);margin-bottom:20px;">Every customer already sees your counter.</p>
+  <h2>Now they see your<br><em>reputation too.</em></h2>
+  <p class="sub">The trust layer your physical business has always needed. Your reputation is already being built online — PROOF makes it visible where it matters most: right in front of your customer.</p>
+  <div class="cta-acts">
+    <a href="{{ product_url }}" class="btn btn-gold btn-gold-lg">Order PROOF Display — $499</a>
+  </div>
+  <p style="font-family:var(--font-display);font-size:18px;font-style:italic;color:rgba(201,168,76,.5);margin-bottom:20px;">Let your reputation speak for itself.</p>
+  <p class="cta-guar">Try it for 60 days — if it doesn't feel valuable, send it back &nbsp;·&nbsp; Free shipping both ways &nbsp;·&nbsp; No subscription</p>
+</section>
+</main>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Final CTA",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Final CTA" }]
+}
+{% endschema %}

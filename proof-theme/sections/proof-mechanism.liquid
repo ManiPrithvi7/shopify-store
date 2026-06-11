@@ -1,0 +1,63 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ MECHANISM ══ -->
+<section class="s mech" id="mechanism">
+  <div class="inner mech-inner">
+    <div>
+      <div class="eyebrow">The Mechanism</div>
+      <h2>A customer walks in.<br><em>Here's what happens.</em></h2>
+      <p class="sub" style="margin:16px 0 8px;max-width:420px;">The display does the selling. The trust moment happens before you say a word.</p>
+      <p style="font-size:13px;color:rgba(184,184,173,.45);margin-bottom:8px;font-family:var(--font-mono);letter-spacing:.06em;max-width:420px;">Customers already check your rating on their phone.<br>PROOF brings that signal into the space where decisions happen.</p>
+      <p style="font-family:var(--font-display);font-size:18px;font-style:italic;color:rgba(201,168,76,.7);margin-bottom:36px;max-width:420px;line-height:1.4;">"When customers see your reputation,<br>reviews become top of mind."</p>
+      <div class="msteps">
+        <div class="mstep">
+          <div class="mstep-conn"><div class="mstep-n">1</div><div class="mstep-line"></div></div>
+          <div class="mstep-body"><h3>They see your rating immediately</h3><p>4.9 stars. 247 reviews. Front and center. No searching. Their decision leans your way before they reach the counter.</p><p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:rgba(92,92,87,.6);margin-top:10px;text-transform:uppercase;">Customers notice. Many ask what it is.</p></div>
+        </div>
+        <div class="mstep">
+          <div class="mstep-conn"><div class="mstep-n">2</div><div class="mstep-line"></div></div>
+          <div class="mstep-body"><h3>They read a real person's review</h3><p>The live feed scrolls real, recent reviews. They see someone just like them vouching for the experience. Peer trust, not brand trust.</p></div>
+        </div>
+        <div class="mstep">
+          <div class="mstep-conn"><div class="mstep-n">3</div><div class="mstep-line"></div></div>
+          <div class="mstep-body"><h3>They want to add their voice</h3><p>Seeing others' reviews primes them to leave one. No asking required. Merchants see review rate increases without any direct prompting.</p><div class="mstep-hi">↑ Review rate without asking</div></div>
+        </div>
+        <div class="mstep">
+          <div class="mstep-conn"><div class="mstep-n">4</div></div>
+          <div class="mstep-body">
+            <h3>More reviews. Higher ranking. Repeat.</h3>
+            <p>Each new review raises your Google Maps position, bringing in the next customer who trusts you faster. Compounding credibility.</p>
+            <div style="margin-top:20px;padding:16px 20px;border-left:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.04);">
+              <p style="font-size:13px;color:rgba(184,184,173,.7);line-height:1.65;margin-bottom:8px;">Early merchants report customers leaving reviews without being asked.</p>
+              <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.5);">PROOF doesn't ask for reviews. It makes them happen naturally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mech-vis">
+      <div class="mv-lbl">What they see on your counter</div>
+      <div class="mv-rating">4.9<span>★</span></div>
+      <div class="mv-count">247 Google Reviews · 2.4K Instagram followers · Updated 3m ago</div>
+      <div class="mv-revs">
+        <div class="mv-rev"><div class="mv-rev-stars">★★★★★</div><div class="mv-rev-name">Sarah M. · Google</div><div class="mv-rev-txt">"Best espresso in the neighborhood. I come every morning."</div></div>
+        <div class="mv-rev"><div class="mv-rev-stars">★★★★★</div><div class="mv-rev-name">James K. · Instagram</div><div class="mv-rev-txt">"Warm atmosphere, incredibly fast. The latte art is a bonus."</div></div>
+      </div>
+      <div class="mv-phone"><div class="mv-phone-icon">📱</div><div><div class="mv-phone-txt">They pull out their phone.</div><div class="mv-phone-sub">And leave you a 5-star review — without being asked.</div></div></div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Mechanism",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Mechanism" }]
+}
+{% endschema %}

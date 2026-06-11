@@ -1,0 +1,33 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ FAQ ══ -->
+<section class="s" style="background:var(--surface-base);">
+  <div class="inner">
+    <div class="eyebrow">Questions</div>
+    <h2>Straight <em>answers.</em></h2>
+    <div class="faq-grid">
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false"><div class="faq-q">Do I need a subscription to use PROOF?</div><div class="faq-a">No — and this is intentional. Core features (Google Reviews, Instagram followers, star rating, review feed) are free forever with the hardware purchase. There's no trial period, no credit card required for the basics, and no feature degradation over time. The optional Momentum add-on ($25/mo) unlocks live sales data on your display — order count, bestseller, promotions, velocity vs prior period. Powerful, but you'll never need it to get value from day one.</div></div>
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false"><div class="faq-q">Which platforms and POS systems does PROOF connect to?</div><div class="faq-a">PROOF Display currently integrates with <strong>Google Reviews</strong> (live rating + review feed), <strong>Instagram</strong> (live follower count), <strong>Square POS</strong>, and <strong>Shopify</strong>. POS integration is optional — the display works standalone with Google and Instagram from day one. Additional POS integrations are on the roadmap; reach out if yours isn't listed.</div></div>
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false"><div class="faq-q">How long does setup actually take?</div><div class="faq-a">Under 5 minutes, start to finish. Plug in the power cable — PROOF creates its own WiFi hotspot. Connect to it from your phone, enter your business WiFi credentials, and link your Google Business profile. No app download, no IT team, no configuration. The display starts pulling your live rating within 60 seconds of connecting. Most pilot merchants were fully live before their first customer of the morning.</div></div>
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false"><div class="faq-q">What if my reviews aren't great yet — will this hurt me?</div><div class="faq-a">No. PROOF has an Establish mode designed specifically for this stage. Instead of displaying a raw rating that might not be where you want it, Establish mode shows your review velocity — how many reviews you've received recently, and the trajectory. Customers respond to momentum. Several pilot merchants with sub-4.5★ ratings actually saw their rating climb faster after install, because the display primes customers to contribute without the awkwardness of being asked.</div></div>
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false"><div class="faq-q">What's the risk if it doesn't work for me?</div><div class="faq-a">Zero. Every PROOF Display comes with a 60-day money-back guarantee — no return shipping cost, no questions asked. If PROOF doesn't feel valuable in your space within 60 days, we refund you in full. We're confident enough in the product that we absorb the risk entirely.</div></div>
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false"><div class="faq-q">What exactly comes in the box?</div><div class="faq-a">PROOF Display unit, universal power adapter, counter-mount hardware, a merchant setup card (QR-linked to your dashboard), and full dashboard access from day one. The packaging is a rigid magnetic-closure box in deep charcoal — designed deliberately so that unboxing in front of customers is its own moment. Several pilot merchants have posted the unboxing. It's that kind of product.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF FAQ",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF FAQ" }]
+}
+{% endschema %}

@@ -1,0 +1,41 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ BEFORE / AFTER ══ -->
+<section class="s" style="background:var(--charcoal);padding-bottom:0;">
+  <div class="inner">
+    <div class="eyebrow">The transformation</div>
+    <h2>60 days.<br><em>Here's what shifts.</em></h2>
+    <p class="sub" style="margin-top:12px;max-width:440px;">A typical café, 60 days after PROOF goes on the counter. Same business. Different visibility.</p>
+    <div style="display:flex;align-items:stretch;gap:0;max-width:780px;margin-top:40px;">
+      <div class="ba-col ba-before" style="flex:1;">
+        <div class="ba-head">Before PROOF</div>
+        <div class="ba-metric"><div class="ba-metric-val">4.3</div><div class="ba-metric-lbl">Star rating</div><div class="ba-metric-sub">Stuck for 8 months</div></div>
+        <div class="ba-metric"><div class="ba-metric-val">63</div><div class="ba-metric-lbl">Google reviews</div><div class="ba-metric-sub">~2 new per month</div></div>
+        <div class="ba-metric"><div class="ba-metric-val">#7</div><div class="ba-metric-lbl">Maps ranking</div><div class="ba-metric-sub">"coffee near me"</div></div>
+        <div class="ba-metric"><div class="ba-metric-val">0</div><div class="ba-metric-lbl">In-store trust signal</div><div class="ba-metric-sub">Reputation invisible inside</div></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;background:var(--charcoal-3);padding:0 20px;font-size:28px;color:var(--gold)">→</div>
+      <div class="ba-col ba-after" style="flex:1;">
+        <div class="ba-head">After 60 days with PROOF</div>
+        <div class="ba-metric"><div class="ba-metric-val">4.7</div><div class="ba-metric-lbl">Star rating</div><div class="ba-metric-sub">↑ 0.4 stars in 60 days</div></div>
+        <div class="ba-metric"><div class="ba-metric-val">214</div><div class="ba-metric-lbl">Google reviews</div><div class="ba-metric-sub">↑ 151 new reviews</div></div>
+        <div class="ba-metric"><div class="ba-metric-val">#2</div><div class="ba-metric-lbl">Maps ranking</div><div class="ba-metric-sub">Top 3 drives 60% of clicks</div></div>
+        <div class="ba-metric"><div class="ba-metric-val">Live</div><div class="ba-metric-lbl">In-store trust signal</div><div class="ba-metric-sub">Reputation working 24/7</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Before after",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Before after" }]
+}
+{% endschema %}

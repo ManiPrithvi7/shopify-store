@@ -1,2 +1,5 @@
+# Set this to YOUR dev store (must be one you own or have staff access on).
+# Override at runtime: SHOPIFY_FLAG_STORE=your-store.myshopify.com npm run dev
 [environments.development]
-store = "proof-test-dev.myshopify.com"
+store = "ekrapr-dq.myshopify.com"
+store-password = "niatay"

@@ -1,0 +1,94 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ COUNTER STACK ══ -->
+<section id="counter-stack" style="background:var(--surface-base);padding:80px 60px;border-top:1px solid rgba(255,255,255,.04);">
+  <div style="max-width:1160px;margin:0 auto;">
+
+    <!-- Two-column: left = copy, right = stack diagram -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+      <!-- LEFT: copy -->
+      <div>
+        <div class="eyebrow">Infrastructure</div>
+        <h2>Your counter already<br>works hard. <em>Now it shows<br>your reputation too.</em></h2>
+        <p class="sub" style="margin-top:16px;max-width:440px;">Every piece of equipment on your counter serves a job. The POS handles payments. The menu board shows products. PROOF shows your reputation — the one signal customers check before they trust you.</p>
+        <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.45);margin-top:20px;line-height:1.8;">Designed to live on your counter.<br>A permanent signal of trust.</p>
+      </div>
+
+      <!-- RIGHT: counter stack visual -->
+      <div>
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(92,92,87,.5);margin-bottom:20px;">The modern counter stack</div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+
+          <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:18px 24px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);">
+            <span style="font-size:18px;">🖥</span>
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-100);">POS Terminal</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:rgba(92,92,87,.6);margin-top:2px;letter-spacing:.04em;">Handles payments</div>
+            </div>
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(92,92,87,.4);">Essential</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:18px 24px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);">
+            <span style="font-size:18px;">📋</span>
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-100);">Menu Board</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:rgba(92,92,87,.6);margin-top:2px;letter-spacing:.04em;">Shows products</div>
+            </div>
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(92,92,87,.4);">Essential</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:18px 24px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);">
+            <span style="font-size:18px;">🧾</span>
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-100);">Receipt Printer</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:rgba(92,92,87,.6);margin-top:2px;letter-spacing:.04em;">Confirms transactions</div>
+            </div>
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(92,92,87,.4);">Standard</div>
+          </div>
+
+          <!-- PROOF — highlighted row -->
+          <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:20px 24px;background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);margin-top:2px;">
+            <span style="font-size:18px;">✦</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--neutral-100);">PROOF Display</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:rgba(201,168,76,.55);margin-top:2px;letter-spacing:.04em;">Makes reputation visible</div>
+            </div>
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(201,168,76,.5);">Missing?</div>
+          </div>
+
+        </div>
+
+        <!-- Trust signals analogy -->
+        <div style="margin-top:20px;padding:20px 24px;border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.015);">
+          <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(92,92,87,.5);margin-bottom:12px;">Businesses have always shown trust signals</div>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <span style="font-size:12px;color:rgba(184,184,173,.45);">Health inspection grade</span>
+            <span style="font-size:12px;color:rgba(92,92,87,.5);">·</span>
+            <span style="font-size:12px;color:rgba(184,184,173,.45);">Industry awards</span>
+            <span style="font-size:12px;color:rgba(92,92,87,.5);">·</span>
+            <span style="font-size:12px;color:rgba(184,184,173,.45);">"Since 1998" signs</span>
+            <span style="font-size:12px;color:rgba(92,92,87,.5);">·</span>
+            <span style="font-size:12px;color:rgba(201,168,76,.6);font-weight:500;">PROOF reputation display</span>
+          </div>
+          <p style="font-size:13px;color:rgba(184,184,173,.45);margin-top:12px;line-height:1.65;">PROOF is the modern version of a signal customers already look for. The difference: it's live, specific, and growing every day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Counter stack",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Counter stack" }]
+}
+{% endschema %}

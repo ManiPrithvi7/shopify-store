@@ -1,0 +1,96 @@
+{% render 'proof-checkout-url', section: section %}
+<main id="main-content" role="main">
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero" aria-label="Hero — PROOF Display product introduction">
+  <div class="hero-content reveal">
+    <div class="hero-badge"><div class="badge-dot"></div>Trust infrastructure · Now shipping USA &amp; Canada</div>
+    <!-- Problem statement — creates the "that's true" moment before the solution -->
+    <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(184,184,173,.45);margin-bottom:20px;line-height:1.6;">Your reputation shouldn't live<br>only on a phone screen.</p>
+    <!-- H1 VARIANT B (active) — outcome-first, specific, merchant-led -->
+    <!-- To revert to Variant A: "Make your / reputation / [visible.]" -->
+    <h1 id="hero-h1" data-variant="b">Make your<br>reputation<br><em>visible.</em></h1>
+    <p class="hero-sub-line">Your Google rating, Instagram followers, and real customer reviews — <strong>visible on your counter</strong> to every person who walks in.</p>
+    <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(92,92,87,.5);margin-top:-20px;margin-bottom:28px;">The in-store reputation display for physical businesses.</p>
+    <p style="font-size:14px;font-weight:400;color:rgba(184,184,173,.5);margin-top:-12px;margin-bottom:28px;max-width:420px;line-height:1.65;">PROOF sits on your counter where every customer sees it — making your online reputation visible in the physical space where decisions happen. A customer waiting for their order notices your 4.9★. Reviews follow naturally.</p>
+    <p class="sub" style="margin-bottom:40px;max-width:460px;">PROOF Display is the trust layer for your physical business — a live signal of your reputation, visible the moment any customer walks through the door.</p>
+    <div class="hero-actions">
+      <a href="{{ product_url }}" class="btn btn-gold btn-gold-lg">Order Now — $499</a>
+      <a href="{{ demo_url }}" class="btn btn-outline btn-outline-lg">Watch 90-sec Demo</a>
+    </div>
+    <p class="hero-microcopy">Free US shipping · No app required · No subscription · 60-day returns</p>
+    <div class="hero-proof-bar">
+      <div class="hpb-stat"><span class="hpb-num">4.9★</span><span class="hpb-lbl">Avg rating displayed</span></div>
+      <div class="hpb-div"></div>
+      <div class="hpb-stat"><span class="hpb-num">2–3×</span><span class="hpb-lbl">More reviews</span></div>
+      <div class="hpb-div"></div>
+      <div class="hpb-stat"><span class="hpb-num">60-day</span><span class="hpb-lbl">Money-back guarantee</span></div>
+    </div>
+
+    <!-- MERCHANT PROOF STRIP -->
+    <div class="hero-merchant-strip">
+      <div class="hms-rating">
+        <span class="hms-stars">★★★★★</span>
+        <span class="hms-score">4.8 average merchant rating</span>
+      </div>
+      <div class="hms-quote">"<em>+41 reviews in 60 days</em>" — Hearthside Coffee, Portland</div>
+      <div class="hms-logos">
+        <span class="hms-logo">Hearthside Coffee</span>
+        <span class="hms-sep">·</span>
+        <span class="hms-logo">Juniper Salon</span>
+        <span class="hms-sep">·</span>
+        <span class="hms-logo">Canopy Roasters</span>
+        <span class="hms-sep">·</span>
+        <span class="hms-logo">Atlas Gym</span>
+        <span class="hms-sep">·</span>
+        <span class="hms-logo">Drift Café</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-device">
+    <div style="display:flex;flex-direction:column;gap:16px;width:100%;max-width:480px;" class="reveal reveal-delay-2">
+      <!-- HERO PRODUCT SHOT PLACEHOLDER -->
+      <div class="img-placeholder" role="img" style="aspect-ratio:4/3;border-radius:4px;">
+        <div class="img-placeholder-icon">📷</div>
+        <div class="img-placeholder-label">Hero Product Shot<br>Device on café counter · warm ambient light</div>
+        <div class="img-placeholder-sub">Replace with real merchant photography</div>
+      </div>
+      <!-- DEVICE MOCK -->
+      <div class="device-wrap" style="width:100%;max-width:420px;margin:0 auto;">
+        <div class="device-glow"></div>
+        <div class="device-flag"><div class="flag-panel">PROOF</div><div class="flag-pole"></div></div>
+        <div class="device-body">
+          <div class="device-screen">
+            <div class="dsh"><span class="dsh-logo">PROOF Display</span><span class="dsh-live">Live · Syncing</span></div>
+            <div class="dsb">
+              <div class="dmets" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="dmc"><div class="dmc-val gold">4.9</div><div class="dmc-lbl">Google</div><div class="dmc-d">247 reviews</div></div>
+                <div class="dmc"><div class="dmc-val" style="color:#e1306c;font-size:20px;">2.4K</div><div class="dmc-lbl">Instagram</div><div class="dmc-d">Followers</div></div>
+                <div class="dmc"><div class="dmc-val green">+14</div><div class="dmc-lbl">This week</div><div class="dmc-d">New reviews</div></div>
+              </div>
+              <div class="drevs">
+                <div class="drev"><div class="drev-av">S</div><div><div class="drev-stars">★★★★★</div><div class="drev-txt">Best espresso in Portland. Always come back.</div><div class="drev-src">Google · 2h ago</div></div></div>
+                <div class="drev"><div class="drev-av">M</div><div><div class="drev-stars">★★★★★</div><div class="drev-txt">Cozy, incredible pastries. My new ritual.</div><div class="drev-src">Instagram · 5h ago</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="device-leds" title="Ambient LED halo indicator"><div class="led"></div><div class="led"></div><div class="led"></div><div class="led"></div><div class="led"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Hero",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Hero" }]
+}
+{% endschema %}

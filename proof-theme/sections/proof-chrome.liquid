@@ -1,0 +1,76 @@
+{% render 'proof-checkout-url', section: section %}
+<div id="proof-landing" class="proof-landing-root" data-product-url="{{ product_url }}">
+<!-- STICKY BUY BAR -->
+<div class="sticky-bar" id="sticky-bar">
+  <div class="sb-left">
+    <div class="sb-logo">PROOF<span>.</span></div>
+    <div class="sb-divider"></div>
+    <div class="sb-tagline"><strong>Trust infrastructure</strong> for physical businesses</div>
+  </div>
+  <div class="sb-right">
+    <div class="sb-guarantee">No app · No subscription · Free shipping<br>60-day returns — no questions</div>
+    <a href="{{ product_url }}" class="btn btn-gold">Order Now — $499</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">PROOF<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#mechanism">How it Works</a></li>
+    <li><a href="#why">Why it Works</a></li>
+    <li><a href="#simulator">Projection</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#customers">Customers</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="{{ product_url }}" class="btn btn-gold">Order Now — $499</a>
+  </div>
+</nav>
+
+<!-- ══ SITEMAP COMMENT — for developer reference ══
+  Page: / (Home)
+  ├── Hero (#hero)
+  ├── Activity Ticker
+  ├── Trust Bar
+  ├── Video Demo
+  ├── Verticals (#verticals)
+  ├── Why It Works (#why)
+  ├── Gold Break (metrics)
+  ├── Category Definition
+  ├── Mechanism (#mechanism)
+  ├── Placement (#placement)
+  ├── Before/After
+  ├── Comparison Table
+  ├── ROI Simulator (#simulator)
+  ├── How It Works
+  ├── Spec Bar
+  ├── In the Wild (#customers)
+  ├── Pricing (#pricing)
+  ├── Pilot (#pilot)
+  ├── Testimonials
+  ├── FAQ
+  └── Final CTA
+══ END SITEMAP ══ -->
+
+{% schema %}
+{
+  "name": "PROOF Chrome",
+  "tag": "section",
+  "class": "proof-chrome-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Checkout product"
+    },
+    {
+      "type": "url",
+      "id": "demo_video_url",
+      "label": "90-sec demo link"
+    }
+  ],
+  "presets": [{ "name": "PROOF Chrome" }]
+}
+{% endschema %}

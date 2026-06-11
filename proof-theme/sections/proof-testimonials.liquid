@@ -1,0 +1,47 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ TESTIMONIALS ══ -->
+<section class="s" style="background:var(--surface-base);">
+  <div class="inner">
+    <div class="eyebrow">Merchant Stories</div>
+    <h2>Real businesses.<br><em>Real numbers.</em></h2>
+    <p class="sub" style="margin-top:12px;max-width:560px;">Early merchants added <strong style="color:var(--neutral-100);">30–40 reviews within weeks</strong> of installation — without asking a single customer directly.</p>
+    <div class="tgrid reveal-stagger">
+      <div class="tc feat">
+        <div class="tc-headline">+41 reviews in 60 days</div>
+        <div class="tc-rating-change">4.7★ → 4.9★</div>
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Customers started leaving reviews without us asking. By the end of week one, three people had mentioned the display unprompted. One said it made her feel like she'd picked the right place."</p>
+        <div class="tc-author"><div class="tc-av">A</div><div><div class="tc-name">Ashley R., Owner</div><div class="tc-biz">Hearthside Coffee · Portland, OR</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-headline">Dine-in up 22%</div>
+        <div class="tc-rating-change">+28 reviews in 30 days</div>
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Setup was ten minutes. The LED halo alone changes how the space feels. Now customers ask what it is — then they see their review on screen and smile. It's become a conversation starter."</p>
+        <div class="tc-author"><div class="tc-av">D</div><div><div class="tc-name">David L., Owner</div><div class="tc-biz">Canopy Roasters · Portland, OR</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-headline">Review rate 3×</div>
+        <div class="tc-rating-change">Staff NPS up 18 points</div>
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"When the flag went up at 250 reviews, my whole team cheered. Staff care about our rating now because they can see it changing in real time. That shift alone was worth the price."</p>
+        <div class="tc-author"><div class="tc-av">M</div><div><div class="tc-name">Maria T., Co-founder</div><div class="tc-biz">Drift Café · Portland, OR</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Testimonials",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Testimonials" }]
+}
+{% endschema %}

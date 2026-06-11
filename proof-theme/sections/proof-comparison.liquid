@@ -1,0 +1,61 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ COMPARISON TABLE ══ -->
+<section class="s" style="background:var(--charcoal);padding-top:64px;">
+  <div class="inner">
+    <div class="eyebrow">PROOF vs alternatives</div>
+    <h2>Every option.<br><em>Honest comparison.</em></h2>
+    <p class="sub" style="margin-top:12px;max-width:440px;">Most businesses already do something to encourage reviews. Here's why those methods fall short at the moment that actually matters.</p>
+    <div class="comp-table">
+      <div class="comp-row header">
+        <div class="comp-cell">Method</div>
+        <div class="comp-cell">The problem</div>
+        <div class="comp-cell" style="text-align:center;">Works?</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell alt-name">Asking verbally</div>
+        <div class="comp-cell prob">Awkward. Staff forget. Feels transactional.</div>
+        <div class="comp-cell check">😬</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell alt-name">Table cards / signs</div>
+        <div class="comp-cell prob">Ignored within a week. No live signal.</div>
+        <div class="comp-cell check">😶</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell alt-name">Email follow-ups</div>
+        <div class="comp-cell prob">Too late — momentum is gone. Low open rates.</div>
+        <div class="comp-cell check">📉</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell alt-name">SMS requests</div>
+        <div class="comp-cell prob">Feels invasive. Requires phone number collection.</div>
+        <div class="comp-cell check">😕</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell alt-name">QR code posters</div>
+        <div class="comp-cell prob">Static. No live credibility signal. Easy to ignore.</div>
+        <div class="comp-cell check">😐</div>
+      </div>
+      <div class="comp-row comp-proof-row">
+        <div class="comp-cell alt-name">PROOF Display</div>
+        <div class="comp-cell prob">Live rating visible. Review priming happens passively. Compounds automatically.</div>
+        <div class="comp-cell check">✦</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Comparison",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Comparison" }]
+}
+{% endschema %}

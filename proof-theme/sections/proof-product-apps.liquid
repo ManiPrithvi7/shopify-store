@@ -1,0 +1,52 @@
+{{ 'proof-landing.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="proof-app-zone proof-app-zone--pdp s"
+  id="proof-product-apps"
+  aria-label="{{ section.settings.heading | escape }}"
+  {{ section.shopify_attributes }}
+>
+  <div class="inner page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="proof-app-zone__pdp-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="proof-app-zone__grid proof-app-zone__grid--single">
+      {%- for block in section.blocks -%}
+        <div class="proof-app-zone__card proof-app-zone__card--pdp" {{ block.shopify_attributes }}>
+          {% render block %}
+        </div>
+      {%- else -%}
+        <div class="proof-app-zone__placeholder proof-app-zone__placeholder--pdp">
+          <p>Add <strong>Judge.me</strong> or other app blocks here (Theme Editor → Product → Add block).</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PROOF Product apps",
+  "tag": "section",
+  "class": "proof-product-apps-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer reviews"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PROOF Product apps"
+    }
+  ]
+}
+{% endschema %}

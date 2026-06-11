@@ -1,0 +1,59 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ IN THE WILD ══
+     SHOPIFY NOTE: Replace .wild-img divs with <img> tags using loading="lazy"
+     and srcset for responsive images. Use Shopify CDN URLs.
+     Recommended sizes: 400w, 800w, 1200w.
+     ══ -->
+<section class="s" style="background:var(--surface-base);" id="customers">
+  <div class="inner">
+    <div class="eyebrow">PROOF in the wild</div>
+    <h2>On counters.<br><em>In real businesses.</em></h2>
+    <p class="sub" style="margin-top:12px;max-width:440px;">Early merchants. Real spaces, real counters, real customers noticing.</p>
+    <div class="wild-grid">
+      <div class="wild-card">
+        <div class="wild-img img-placeholder" role="img" aria-label="Product placement photograph — coming soon">
+          <div class="wild-icon">☕</div>
+          <div class="wild-label">Café front counter<br>Portland, OR</div>
+        </div>
+        <div class="wild-cap"><div class="wild-cap-name">Hearthside Coffee</div><div class="wild-cap-loc">+41 reviews in 60 days</div></div>
+      </div>
+      <div class="wild-card">
+        <div class="wild-img img-placeholder" role="img" aria-label="Product placement photograph — coming soon">
+          <div class="wild-icon">✂️</div>
+          <div class="wild-label">Salon reception desk<br>Portland, OR</div>
+        </div>
+        <div class="wild-cap"><div class="wild-cap-name">Studio North Salon</div><div class="wild-cap-loc">4.6★ → 4.9★ in 45 days</div></div>
+      </div>
+      <div class="wild-card">
+        <div class="wild-img img-placeholder" role="img" aria-label="Product placement photograph — coming soon">
+          <div class="wild-icon">🍽️</div>
+          <div class="wild-label">Restaurant host stand<br>Portland, OR</div>
+        </div>
+        <div class="wild-cap"><div class="wild-cap-name">Canopy Roasters</div><div class="wild-cap-loc">+28 reviews in 30 days</div></div>
+      </div>
+      <div class="wild-card">
+        <div class="wild-img img-placeholder" role="img" aria-label="Product placement photograph — coming soon">
+          <div class="wild-icon">🛍️</div>
+          <div class="wild-label">Retail checkout<br>Portland, OR</div>
+        </div>
+        <div class="wild-cap"><div class="wild-cap-name">Drift Boutique</div><div class="wild-cap-loc">Review rate 3× in 60 days</div></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--stone);margin-top:16px;">Image placeholders — replace with merchant photography</p>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Customers",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Customers" }]
+}
+{% endschema %}

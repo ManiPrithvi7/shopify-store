@@ -1,0 +1,20 @@
+{%- liquid
+  assign proof_product = nil
+  if section.settings.product != blank
+    assign proof_product = section.settings.product
+  elsif settings.proof_checkout_product != blank
+    assign proof_product = settings.proof_checkout_product
+  endif
+
+  if proof_product != blank
+    assign product_url = proof_product.url
+  else
+    assign product_url = '/products/proof-display-test'
+  endif
+
+  if section.settings.demo_video_url != blank
+    assign demo_url = section.settings.demo_video_url
+  else
+    assign demo_url = '#simulator'
+  endif
+-%}

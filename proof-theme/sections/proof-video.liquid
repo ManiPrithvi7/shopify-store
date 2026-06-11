@@ -1,0 +1,42 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ VIDEO DEMO ══ -->
+<section class="video-section">
+  <div class="video-inner">
+    <div style="text-align:center;margin-bottom:0;">
+      <div class="eyebrow" style="justify-content:center;">See it in action</div>
+      <h2>90 seconds.<br><em>The whole story.</em></h2>
+      <p class="sub" style="max-width:420px;margin:12px auto 0;">A customer walks in. Sees your rating. Leaves a review. Watch the full cycle — live.</p>
+    </div>
+    <div class="video-wrap">
+      <!-- VIDEO PLACEHOLDER — replace src with real 90-sec demo video -->
+      <div class="video-play-btn"><div class="video-play-icon"></div></div>
+      <div class="video-meta">
+        <div class="video-meta-title">PROOF Display — 90 Second Demo</div>
+        <div class="video-meta-sub">Hearthside Coffee · Portland, OR · Real merchant, real customers</div>
+      </div>
+      <div style="position:absolute;top:20px;right:20px;background:rgba(17,17,16,.7);padding:6px 12px;font-family:'DM Mono',monospace;font-size:10px;color:var(--fog);letter-spacing:.08em;">
+        VIDEO PLACEHOLDER · Replace with real footage
+      </div>
+    </div>
+    <div class="video-stats" style="margin-top:4px;">
+      <div class="vs-card"><div class="vs-num">90<span style="font-size:24px;color:var(--gold)">sec</span></div><div class="vs-lbl">Demo length</div></div>
+      <div class="vs-card"><div class="vs-num">Real<span style="font-size:24px;color:var(--gold)"> merchant</span></div><div class="vs-lbl">No actors</div></div>
+      <div class="vs-card"><div class="vs-num">Full<span style="font-size:24px;color:var(--gold)"> cycle</span></div><div class="vs-lbl">Walk-in to review</div></div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Video",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Video" }]
+}
+{% endschema %}

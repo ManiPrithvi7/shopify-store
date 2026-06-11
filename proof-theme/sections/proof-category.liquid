@@ -1,0 +1,62 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ CATEGORY DEFINITION ══ -->
+<section class="s" style="background:var(--charcoal-3);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);">
+  <div class="inner" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+    <div>
+      <div class="eyebrow">A new category</div>
+      <h2>Not a gadget.<br><em>Infrastructure.</em></h2>
+      <p class="sub" style="margin-top:16px;margin-bottom:32px;">Every physical business already has a Google rating. Most don't know it's working against them — invisibly, silently, every day. PROOF makes your trust layer an active asset instead of a passive liability.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="cat-item"><span class="cat-icon">🌐</span><div><div class="cat-title">Online businesses have always had trust infrastructure</div><div class="cat-body">Reviews, trust badges, SSL signals, social proof widgets — it's table stakes on any e-commerce page.</div></div></div>
+        <div class="cat-item"><span class="cat-icon">🏪</span><div><div class="cat-title">Physical businesses have been flying blind</div><div class="cat-body">Your reputation lives on Google — but customers inside your door can't see it. You've been paying for credibility you're not deploying.</div></div></div>
+        <div class="cat-item"><span class="cat-icon">✦</span><div><div class="cat-title">PROOF is the trust layer for physical retail</div><div class="cat-body">The same category of infrastructure that e-commerce built over 20 years, available for your counter in two minutes.</div></div></div>
+      </div>
+    </div>
+    <div class="cat-compare">
+      <div class="cat-compare-label">Every day without PROOF</div>
+      <div class="cat-compare-grid">
+        <div class="cat-compare-col cat-compare-without">
+          <div class="cat-compare-col-head">
+            <span class="cat-compare-icon">🔴</span>
+            <span>Without PROOF</span>
+          </div>
+          <div class="cat-compare-item-list">
+            <div class="cat-compare-item">Customer walks in — trusts their gut</div>
+            <div class="cat-compare-item">Your 4.9★ is invisible inside your space</div>
+            <div class="cat-compare-item">Reviews accumulate by chance</div>
+            <div class="cat-compare-item">Competitor with 300 reviews wins on Maps</div>
+            <div class="cat-compare-item">No milestone moment for your team</div>
+          </div>
+        </div>
+        <div class="cat-compare-col cat-compare-with">
+          <div class="cat-compare-col-head">
+            <span class="cat-compare-icon">✦</span>
+            <span>With PROOF</span>
+          </div>
+          <div class="cat-compare-item-list">
+            <div class="cat-compare-item">Customer walks in — sees 247 people vouched for you</div>
+            <div class="cat-compare-item">Your reputation is your first impression</div>
+            <div class="cat-compare-item">Reviews compound through display priming</div>
+            <div class="cat-compare-item">Review velocity raises your Maps ranking</div>
+            <div class="cat-compare-item">Flag deploys. Team celebrates. Flywheel turns.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Category",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Category" }]
+}
+{% endschema %}

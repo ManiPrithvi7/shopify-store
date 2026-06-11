@@ -1,0 +1,74 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ VERTICALS ══ -->
+<section class="s verticals" id="verticals" style="border-top:1px solid rgba(255,255,255,.04);" aria-label="Vertical markets — businesses PROOF works for">
+  <div class="inner">
+    <div class="eyebrow">Where PROOF works</div>
+    <h2>Built for any business<br>where <em>trust matters.</em></h2>
+    <p class="sub" style="margin-top:12px;max-width:440px;">If customers walk through your door, PROOF Display turns that moment into a competitive advantage.</p>
+    <div class="vert-grid reveal-stagger">
+      <div class="vert-card active">
+        <div class="vert-icon">☕</div>
+        <div class="vert-name">Café &amp; Coffee</div>
+        <div class="vert-desc">The morning ritual decision is made before they order. A 4.9★ on the counter closes the first-time visitor before you say hello.</div>
+        <div class="vert-placement">Front counter</div>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon">🍽️</div>
+        <div class="vert-name">Restaurant</div>
+        <div class="vert-desc">Diners choose with their eyes. Live review feed running at the host stand turns wait time into trust-building time.</div>
+        <div class="vert-placement">Host stand</div>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon">✂️</div>
+        <div class="vert-name">Salon &amp; Barber</div>
+        <div class="vert-desc">Your talent speaks for itself — PROOF makes sure the 200 people who said so are visible before the first snip.</div>
+        <div class="vert-placement">Reception desk</div>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon">🛍️</div>
+        <div class="vert-name">Retail</div>
+        <div class="vert-desc">Shoppers who see social proof at checkout spend more and return more often. PROOF turns the POS into a loyalty signal.</div>
+        <div class="vert-placement">Checkout counter</div>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon">💪</div>
+        <div class="vert-name">Gym &amp; Fitness</div>
+        <div class="vert-desc">Prospects tour before they join. A live 4.8★ with 340 reviews at the front desk answers every objection before it's voiced.</div>
+        <div class="vert-placement">Front desk</div>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon">🏥</div>
+        <div class="vert-name">Clinic &amp; Med Spa</div>
+        <div class="vert-desc">Healthcare decisions are trust decisions. PROOF on the reception desk reassures new patients before they even sit down.</div>
+        <div class="vert-placement">Reception</div>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon">🍕</div>
+        <div class="vert-name">Quick Service</div>
+        <div class="vert-desc">Speed matters — so does credibility. A visible 4.9★ during the lunch rush turns first-timers into regulars.</div>
+        <div class="vert-placement">Order counter</div>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon">🐾</div>
+        <div class="vert-name">Pet Services</div>
+        <div class="vert-desc">Owners need to know their pet is in great hands. Live reviews at drop-off turn owner anxiety into confidence before a word is spoken.</div>
+        <div class="vert-placement">Drop-off desk</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Verticals",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Verticals" }]
+}
+{% endschema %}

@@ -1,0 +1,42 @@
+{% render 'proof-checkout-url', section: section %}
+<!-- ══ RISK REVERSAL ══ -->
+<div style="max-width:960px;margin:0 auto 0;padding:0 0 0;">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,.05);margin-top:4px;">
+    <div style="padding:24px 28px;border-right:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:14px;">
+      <span style="font-size:20px;flex-shrink:0;">🛡</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--neutral-100);margin-bottom:4px;">Try it for 60 days.</div>
+        <div style="font-size:12px;color:rgba(184,184,173,.55);line-height:1.6;">If PROOF doesn't feel valuable in your space, send it back. Full refund. No questions. We cover return shipping.</div>
+      </div>
+    </div>
+    <div style="padding:24px 28px;border-right:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:14px;">
+      <span style="font-size:20px;flex-shrink:0;">📦</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--neutral-100);margin-bottom:4px;">Free shipping both ways</div>
+        <div style="font-size:12px;color:rgba(184,184,173,.55);line-height:1.6;">Ships to your door at no cost. If you return it, we cover that too. You only pay if you keep it and love it.</div>
+      </div>
+    </div>
+    <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:14px;">
+      <span style="font-size:20px;flex-shrink:0;">⚡</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--neutral-100);margin-bottom:4px;">Working the same day</div>
+        <div style="font-size:12px;color:rgba(184,184,173,.55);line-height:1.6;">Under 5 minutes from unbox to live. No IT team, no app download, no configuration. Plug in and PROOF starts pulling your reviews.</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% render 'proof-section-apps' %}
+
+{% schema %}
+{
+  "name": "PROOF Risk reversal",
+  "tag": "section",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Risk reversal" }]
+}
+{% endschema %}
