@@ -34,8 +34,7 @@
   </head>
 
   <body class="proof-landing">
-    <main id="MainContent" role="main">
-      {{ content_for_layout }}
-    </main>
+    {{ content_for_layout }}
+    {% render 'proof-embed-rail' %}
   </body>
 </html>

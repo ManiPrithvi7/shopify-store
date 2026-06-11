@@ -50,7 +50,7 @@ The storefront homepage (`/`) uses the custom V23 design, not Dawn defaults.
 | `sections/proof-chrome.liquid` | Sticky buy bar + nav |
 | `sections/proof-hero.liquid` … `proof-fcta.liquid` | **22 V23 sections** — add/reorder in Theme Editor |
 | `sections/proof-app-zone.liquid` | Dedicated **App blocks** zone |
-| `sections/proof-embed-rail.liquid` | Visual anchors for Inbox / Sales Pop embeds |
+| `snippets/proof-embed-rail.liquid` | Inbox / Sales Pop anchors (in `theme.proof` layout, not counted in 25-section limit) |
 | `sections/proof-footer.liquid` | V23 footer |
 | `sections/proof-product-apps.liquid` | Product page app block zone |
 | `assets/proof-landing.css` | V23 design system + app embed offsets |

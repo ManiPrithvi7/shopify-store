@@ -104,10 +104,6 @@
     "proof-footer": {
       "type": "proof-footer",
       "settings": {}
-    },
-    "proof-embed-rail": {
-      "type": "proof-embed-rail",
-      "settings": {}
     }
   },
   "order": [
@@ -135,7 +131,6 @@
     "proof-aeo",
     "proof-fcta",
     "proof-app-zone",
-    "proof-footer",
-    "proof-embed-rail"
+    "proof-footer"
   ]
 }

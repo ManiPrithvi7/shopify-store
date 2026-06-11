@@ -95,7 +95,7 @@ index = {
     "sections": {},
     "order": ["proof-chrome"]
     + order
-    + ["proof-app-zone", "proof-footer", "proof-embed-rail"],
+    + ["proof-app-zone", "proof-footer"],
 }
 for sid in index["order"]:
     if sid == "proof-app-zone":
