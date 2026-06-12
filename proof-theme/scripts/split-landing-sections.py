@@ -1,4 +1,23 @@
 #!/usr/bin/env python3
+"""Split monolithic landing HTML into Shopify sections.
+
+V23: uses proof-landing-main.liquid markers below.
+V40: use scripts/build-v40-theme.py instead (reads PROOF_Display_V40.html).
+
+V40 marker map (for future V41 exports):
+  proof-chrome      -> ambient-bg + #main-nav
+  proof-hero        -> #hero
+  proof-video       -> .proof-motion
+  proof-ticker      -> .ticker-section
+  proof-results     -> #results
+  proof-how-it-works -> #how-it-works
+  proof-screens     -> #screens
+  proof-testimonials -> #testimonials
+  proof-pricing     -> #pricing
+  proof-faq         -> #faq
+  proof-fcta        -> #order
+  proof-footer      -> <footer>
+"""
 import re
 from pathlib import Path
 

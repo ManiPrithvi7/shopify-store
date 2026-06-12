@@ -1,97 +1,47 @@
 {% render 'proof-checkout-url', section: section %}
-<!-- ══ PRICING ══ -->
-<section class="s" style="background:var(--surface-base);" id="pricing" aria-label="Pricing — hardware and subscription options">
-  <div class="inner" style="text-align:center;">
-    <div class="eyebrow" style="justify-content:center;">Pricing</div>
-    <h2>Simple.<br><em>No surprises.</em></h2>
-    <p class="sub" style="max-width:440px;margin:16px auto 40px;">Buy the device once. Core features free forever. Add analytics modules only if you want them.</p>
-
-    <!-- PRODUCT SUMMARY BLOCK -->
-    <div class="prod-summary">
-      <div class="ps-left">
-        <div class="ps-title">PROOF Display</div>
-        <div class="ps-sub">Designed to live on your counter</div>
-        <ul class="ps-list">
-          <li><span class="ck">✓</span>10.1" commercial anti-glare display</li>
-          <li><span class="ck">✓</span>Plug-and-play WiFi setup</li>
-          <li><span class="ck">✓</span>Ambient LED halo (colour-coded)</li>
-          <li><span class="ck">✓</span>Stainless steel milestone flag</li>
-          <li><span class="ck">✓</span>Google Reviews + Instagram followers</li>
-          <li><span class="ck">✓</span>No subscription required</li>
+<section class="pricing-section" id="pricing" aria-label="Pricing — Social Proof and Business Proof tiers">
+  <div class="section-inner">
+    <span class="section-label reveal">Simple pricing</span>
+    <h2 class="section-h2 reveal reveal-delay-1">Two tiers. One obvious choice.</h2>
+    <div class="pricing-grid reveal reveal-delay-2">
+      <div class="pricing-card">
+        <div class="pricing-tier">Social Proof</div>
+        <div class="pricing-price">$0<span style="font-size:20px;color:var(--text-secondary)">/mo</span></div>
+        <div class="pricing-price-note">After $499 hardware, free forever</div>
+        <ul class="pricing-features">
+          <li>Live Google Rating · S1</li>
+          <li>Live Instagram Count · S2</li>
+          <li>NFC one-tap review flow</li>
+          <li>Celebration flag animation</li>
+          <li>WiFi over-the-air updates</li>
         </ul>
       </div>
-      <div class="ps-right">
-        <div class="ps-price">$499</div>
-        <div class="ps-price-note">One-time · Free US shipping</div>
-        <div class="ps-econ">If <strong>80 customers</strong> walk in daily, PROOF typically generates <strong>10–20 new reviews per month</strong> — compounding your Maps ranking every week.</div>
-        <p style="font-size:12px;color:rgba(184,184,173,.4);font-style:italic;margin-bottom:12px;line-height:1.6;">Most businesses see meaningful review growth within the first few weeks. If it doesn't work for you, you send it back.</p>
-        <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:rgba(201,168,76,.4);margin-bottom:12px;text-transform:uppercase;">Less than the cost of one week of paid ads.</p>
-        <a href="{{ product_url }}" class="btn btn-gold" style="width:100%;text-align:center;display:block;padding:16px;">Order Now — $499 →</a>
-        <p style="font-size:11px;color:var(--stone);margin-top:12px;">Try it 60 days. If it doesn't feel valuable in your space, send it back.</p>
-              <p style="font-size:11px;color:var(--stone);margin-top:6px;">Add Momentum (live sales data) for $25/mo — cancel anytime.</p>
+      <div class="pricing-card" style="border-left:0.5px solid var(--warm-border);">
+        <div class="pricing-tier" style="color:var(--cream);">Business Proof</div>
+        <div class="pricing-price">$25<span style="font-size:20px;color:var(--text-secondary)">/mo</span></div>
+        <div class="pricing-price-note">Everything in Social Proof, plus:</div>
+        <ul class="pricing-features">
+          <li>Square & Shopify integration · S3</li>
+          <li>Today's Promotion screen · S4</li>
+          <li>Real-time orders + best seller</li>
+          <li>Merchant dashboard access</li>
+          <li>Priority support</li>
+        </ul>
       </div>
     </div>
-    <div class="pc-clarifier">
-      <div class="pc-step"><div class="pc-sn">1</div><div class="pc-st">Buy the device</div><div class="pc-sp">$499</div><div class="pc-sn2">One-time, yours forever</div></div>
-      <div class="pc-step"><div class="pc-sn">2</div><div class="pc-st">Core features</div><div class="pc-sp">Free</div><div class="pc-sn2">Included forever, no card</div></div>
-      <div class="pc-step"><div class="pc-sn">3</div><div class="pc-st">Momentum add-on</div><div class="pc-sp">$25/mo</div><div class="pc-sn2">Cancel anytime</div></div>
-    </div>
-    <div class="pg" style="margin-top:4px;">
-      <div class="pc">
-        <div class="pc-name">Hardware</div><div class="pc-amt">$499</div><div class="pc-period">One-time · Free US shipping</div>
-        <div class="pc-div"></div>
-        <ul class="pc-list">
-          <li><span class="ck">✓</span>10.1" anti-glare counter display</li>
-          <li><span class="ck">✓</span>Ambient LED halo — visible across the room</li>
-          <li><span class="ck">✓</span>Stainless steel milestone flag</li>
-          <li><span class="ck">✓</span>Google Reviews + Instagram sync</li>
-          <li><span class="ck">✓</span>Plug-and-play WiFi — installs in minutes</li>
-        </ul>
-        <a href="{{ product_url }}" class="btn btn-gold pc-btn">Order PROOF — $499 →</a>
-      </div>
-      <div class="pc feat">
-        <div class="pc-badge">Free Forever</div>
-        <div class="pc-name">Core Features</div><div class="pc-amt">$0</div><div class="pc-period">Included with hardware</div>
-        <div class="pc-div"></div>
-        <ul class="pc-list">
-          <li><span class="ck">✓</span>Live Google rating &amp; review feed</li>
-          <li><span class="ck">✓</span>Instagram follower count</li>
-          <li><span class="ck">✓</span>Updates automatically — no manual entry</li>
-          <li><span class="ck">✓</span>Remote dashboard — manage from your phone</li>
-        </ul>
-        <a href="#" class="btn btn-outline pc-btn">Included with hardware</a>
-      </div>
-      <div class="pc">
-        <div class="pc-name">Momentum</div>
-        <div class="pc-amt">$25</div>
-        <div class="pc-period">per month · cancel anytime</div>
-        <div class="pc-div"></div>
-        <div style="background:var(--brand-dark);border:1px solid var(--brand-border);padding:12px 14px;margin-bottom:20px;font-size:13px;color:var(--neutral-500);line-height:1.6;">
-          <strong style="color:var(--neutral-100);display:block;margin-bottom:4px;">Live sales data on your display.</strong>
-          Your busiest hour, today's order count, your bestselling item, and active promotions — visible to every customer, in real time. When people see a business is busy, they want to be part of it.
-        </div>
-        <ul class="pc-list">
-          <li><span class="ck">✓</span><div><strong style="color:var(--neutral-100);font-size:13px;">Total orders today</strong><div style="font-size:12px;color:var(--neutral-700);margin-top:2px;">Live count from Square or Shopify</div></div></li>
-          <li><span class="ck">✓</span><div><strong style="color:var(--neutral-100);font-size:13px;">Bestseller spotlight</strong><div style="font-size:12px;color:var(--neutral-700);margin-top:2px;">"#1 today: Oat Latte" — updated every hour</div></div></li>
-          <li><span class="ck">✓</span><div><strong style="color:var(--neutral-100);font-size:13px;">Promotions &amp; specials</strong><div style="font-size:12px;color:var(--neutral-700);margin-top:2px;">Push today's offer to the display in 2 minutes</div></div></li>
-          <li><span class="ck">✓</span><div><strong style="color:var(--neutral-100);font-size:13px;">Velocity vs prior period</strong><div style="font-size:12px;color:var(--neutral-700);margin-top:2px;">"Up 23% vs last Tuesday" — live comparison</div></div></li>
-          <li><span class="ck">✓</span><div><strong style="color:var(--neutral-100);font-size:13px;">Multi-location dashboard</strong><div style="font-size:12px;color:var(--neutral-700);margin-top:2px;">Manage all displays from one screen</div></div></li>
-        </ul>
-        <a href="#" class="btn btn-outline pc-btn">Add Momentum →</a>
-      </div>
+    <div class="reveal reveal-delay-3" style="margin-top:28px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:0.12em;">30-DAY MONEY-BACK GUARANTEE · NO ANNUAL CONTRACT · CANCEL ANYTIME</div>
     </div>
   </div>
 </section>
-{% render 'proof-section-apps' %}
-
 {% schema %}
 {
   "name": "PROOF Pricing",
-  "tag": "section",
+  "tag": "div",
   "class": "proof-section",
   "settings": [
     { "type": "product", "id": "product", "label": "Checkout product" },
-    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+    { "type": "url", "id": "demo_video_url", "label": "Demo / video link" }
   ],
   "blocks": [{ "type": "@app" }],
   "presets": [{ "name": "PROOF Pricing" }]

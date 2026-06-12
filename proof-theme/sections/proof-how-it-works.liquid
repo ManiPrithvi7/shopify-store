@@ -1,0 +1,77 @@
+{% render 'proof-checkout-url', section: section %}
+<section class="qr-section" id="how-it-works" aria-label="How PROOF Display works versus QR codes">
+  <div class="section-inner">
+    <span class="section-label reveal">Why QR codes fail</span>
+    <h2 class="section-h2 reveal reveal-delay-1">The problem is the friction.</h2>
+    <div class="qr-grid reveal reveal-delay-2">
+      <div>
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--text-muted);margin-bottom:20px;text-transform:uppercase;">Old way — QR code on receipt</div>
+        <div class="qr-steps" id="qrSteps">
+          <div class="qr-step">
+            <span class="qr-step-num">01</span>
+            <div class="qr-step-text">
+              <strong>Open camera app</strong>
+              Customer gets home, remembers, opens their camera
+            </div>
+          </div>
+          <div class="qr-step">
+            <span class="qr-step-num">02</span>
+            <div class="qr-step-text">
+              <strong>Scan the code</strong>
+              If the receipt isn't crumpled, if the lighting is right
+            </div>
+          </div>
+          <div class="qr-step">
+            <span class="qr-step-num">03</span>
+            <div class="qr-step-text">
+              <strong>Wait for page load</strong>
+              Google Maps loads. Sign in prompt appears.
+            </div>
+          </div>
+          <div class="qr-step">
+            <span class="qr-step-num">04</span>
+            <div class="qr-step-text">
+              <strong>Find the review form</strong>
+              Navigate menus. Most people close the tab.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-way reveal reveal-delay-3">
+        <div class="proof-way-icon">📱</div>
+        <h3 class="proof-way-h3" id="speakable-proof-way">The PROOF way</h3>
+        <p class="proof-way-sub">Customer sees your live rating glowing on the counter. They tap the base with their phone. Review form opens instantly. Done in 8 seconds.</p>
+        <div style="margin-top:16px;">
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:2px;">NFC · ONE TAP · 8 SECONDS</div>
+        </div>
+      </div>
+
+    <!-- 7× NFC STAT PULL QUOTE -->
+    <div class="nfc-stat-block reveal" style="margin-top:56px;max-width:760px;margin-left:auto;margin-right:auto;padding:40px 48px;border:0.5px solid rgba(201,168,76,0.25);border-left:3px solid var(--gold);border-radius:4px;background:rgba(201,168,76,0.04);position:relative;">
+      <div style="position:absolute;top:-11px;left:48px;background:var(--ink);padding:0 12px;font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);">Pilot Data · Portland 2026</div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;">
+        <div style="font-family:var(--font-serif);font-size:clamp(56px,8vw,96px);font-weight:300;color:var(--gold);line-height:1;letter-spacing:-3px;">7×</div>
+        <div>
+          <div style="font-family:var(--font-serif);font-size:clamp(18px,2.2vw,26px);font-weight:300;color:var(--cream);line-height:1.35;margin-bottom:12px;">NFC taps convert to completed reviews at <em style="font-style:italic;color:var(--gold);">seven times</em> the rate of QR codes.</div>
+          <div style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);letter-spacing:0.08em;line-height:1.6;">The difference is timing. NFC happens at the moment of satisfaction — on the counter, before they leave. QR happens later, at home, after the moment is gone.</div>
+          <div style="margin-top:14px;padding-top:14px;border-top:0.5px solid rgba(201,168,76,0.12);font-family:var(--font-mono);font-size:10px;color:rgba(201,168,76,0.4);letter-spacing:0.14em;line-height:1.7;">Methodology · n=10 Portland merchants · 60-day period · NFC: 61 taps, 43 reviews completed (70.5%) · QR: 187 receipts, 27 reviews completed (14.4%)</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "PROOF How it works",
+  "tag": "div",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "Demo / video link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF How it works" }]
+}
+{% endschema %}

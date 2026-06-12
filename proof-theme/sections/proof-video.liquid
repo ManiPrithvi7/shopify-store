@@ -1,42 +1,53 @@
 {% render 'proof-checkout-url', section: section %}
-<!-- ══ VIDEO DEMO ══ -->
-<section class="video-section">
-  <div class="video-inner">
-    <div style="text-align:center;margin-bottom:0;">
-      <div class="eyebrow" style="justify-content:center;">See it in action</div>
-      <h2>90 seconds.<br><em>The whole story.</em></h2>
-      <p class="sub" style="max-width:420px;margin:12px auto 0;">A customer walks in. Sees your rating. Leaves a review. Watch the full cycle — live.</p>
+<section class="proof-motion" aria-label="PROOF Display in motion">
+  <div class="pm-ambient"></div>
+  <div class="pm-grain"></div>
+  <div class="pm-inner">
+    <div class="pm-eyebrow reveal">
+      <span class="pm-eyebrow-line"></span>
+      <span>PROOF in motion</span>
+      <span class="pm-eyebrow-line"></span>
     </div>
-    <div class="video-wrap">
-      <!-- VIDEO PLACEHOLDER — replace src with real 90-sec demo video -->
-      <div class="video-play-btn"><div class="video-play-icon"></div></div>
-      <div class="video-meta">
-        <div class="video-meta-title">PROOF Display — 90 Second Demo</div>
-        <div class="video-meta-sub">Hearthside Coffee · Portland, OR · Real merchant, real customers</div>
-      </div>
-      <div style="position:absolute;top:20px;right:20px;background:rgba(17,17,16,.7);padding:6px 12px;font-family:'DM Mono',monospace;font-size:10px;color:var(--fog);letter-spacing:.08em;">
-        VIDEO PLACEHOLDER · Replace with real footage
+    <h2 class="pm-headline reveal reveal-delay-1">
+      Eight seconds. <em>One tap.</em> Everything changes.
+    </h2>
+    <div class="pm-frame reveal reveal-delay-2">
+      <div class="pm-corner pm-tl"></div>
+      <div class="pm-corner pm-tr"></div>
+      <div class="pm-corner pm-bl"></div>
+      <div class="pm-corner pm-br"></div>
+      <div class="pm-video-wrap">
+        <video class="pm-video" autoplay muted loop playsinline preload="auto"
+          poster="{{ 'proof-motion-poster.jpg' | asset_url }}"
+          aria-label="Close-up of PROOF Display on a café counter">
+          <source src="{{ 'proof-motion.mp4' | asset_url }}" type="video/mp4">
+        </video>
+        <div class="pm-vignette"></div>
+        <div class="pm-scan"></div>
+        <div class="pm-caption">
+          <span class="pm-rec"><span class="pm-rec-dot"></span>LIVE</span>
+          <span class="pm-cap-text">PROOF Display · Foxtail Coffee · 02:14 PM</span>
+          <span class="pm-cap-tc">00:00:08:00</span>
+        </div>
       </div>
     </div>
-    <div class="video-stats" style="margin-top:4px;">
-      <div class="vs-card"><div class="vs-num">90<span style="font-size:24px;color:var(--gold)">sec</span></div><div class="vs-lbl">Demo length</div></div>
-      <div class="vs-card"><div class="vs-num">Real<span style="font-size:24px;color:var(--gold)"> merchant</span></div><div class="vs-lbl">No actors</div></div>
-      <div class="vs-card"><div class="vs-num">Full<span style="font-size:24px;color:var(--gold)"> cycle</span></div><div class="vs-lbl">Walk-in to review</div></div>
+    <div class="pm-meta reveal reveal-delay-3">
+      <div class="pm-meta-col"><div class="pm-meta-k">Tap latency</div><div class="pm-meta-v">~140ms</div></div>
+      <div class="pm-meta-col"><div class="pm-meta-k">Customer steps</div><div class="pm-meta-v">1</div></div>
+      <div class="pm-meta-col"><div class="pm-meta-k">Staff involvement</div><div class="pm-meta-v">0</div></div>
+      <div class="pm-meta-col"><div class="pm-meta-k">Outcome</div><div class="pm-meta-v">~1 review / day</div></div>
     </div>
   </div>
 </section>
-{% render 'proof-section-apps' %}
-
 {% schema %}
 {
-  "name": "PROOF Video",
-  "tag": "section",
+  "name": "PROOF in motion",
+  "tag": "div",
   "class": "proof-section",
   "settings": [
     { "type": "product", "id": "product", "label": "Checkout product" },
-    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+    { "type": "url", "id": "demo_video_url", "label": "Fallback demo link" }
   ],
-  "blocks": [{ "type": "@app" }],
-  "presets": [{ "name": "PROOF Video" }]
+  "presets": [{ "name": "PROOF in motion" }]
 }
 {% endschema %}

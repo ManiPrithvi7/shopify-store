@@ -1,0 +1,38 @@
+{% render 'proof-checkout-url', section: section %}
+<section class="results-section" id="results" aria-label="Pilot results from Portland founding merchants">
+  <div class="section-inner">
+    <span class="section-label reveal">Measured outcomes</span>
+    <h2 class="section-h2 reveal reveal-delay-1" id="speakable-results">Numbers that feel earned.</h2>
+    <p class="section-sub reveal reveal-delay-2">From pilot merchants across Portland. Early-access results from the founding cohort, Q1–Q2 2026.</p>
+    <div class="results-grid">
+      <div class="result-card reveal">
+        <div class="result-number"><span class="odometer" data-target="47">47</span> → <span class="odometer" data-target="91">91</span></div>
+        <div class="result-label">Google Reviews</div>
+        <div class="result-desc">Average review volume at 60 days in-store</div>
+      </div>
+      <div class="result-card reveal reveal-delay-1">
+        <div class="result-number"><span class="odometer" data-target="4" data-decimal="true">4.3</span> → <span class="odometer" data-target="4" data-decimal-target="4.7">4.7</span><span class="result-unit">★</span></div>
+        <div class="result-label">Average Rating</div>
+        <div class="result-desc">Rating lift from volume of authentic 5-star reviews</div>
+      </div>
+      <div class="result-card reveal reveal-delay-2">
+        <div class="result-number"><span class="odometer" data-target="2">2</span>.<span class="odometer" data-target="3">3</span><span class="result-unit">×</span></div>
+        <div class="result-label">Review Velocity</div>
+        <div class="result-desc">More reviews per month vs. period before PROOF</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "PROOF Results",
+  "tag": "div",
+  "class": "proof-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Checkout product" },
+    { "type": "url", "id": "demo_video_url", "label": "Demo / video link" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "PROOF Results" }]
+}
+{% endschema %}

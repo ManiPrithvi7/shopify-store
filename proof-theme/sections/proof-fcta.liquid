@@ -1,26 +1,56 @@
 {% render 'proof-checkout-url', section: section %}
-<section class="fcta">
-  <div class="eyebrow" style="justify-content:center;">Ready?</div>
-  <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(184,184,173,.35);margin-bottom:20px;">Every customer already sees your counter.</p>
-  <h2>Now they see your<br><em>reputation too.</em></h2>
-  <p class="sub">The trust layer your physical business has always needed. Your reputation is already being built online — PROOF makes it visible where it matters most: right in front of your customer.</p>
-  <div class="cta-acts">
-    <a href="{{ product_url }}" class="btn btn-gold btn-gold-lg">Order PROOF Display — $499</a>
+<section class="final-cta" id="order" aria-label="Order PROOF Display" style="position:relative;">
+  <!-- Editorial signature stamp — asymmetric, top-left bleed -->
+  <div aria-hidden="true" style="position:absolute;top:48px;left:6vw;font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(201,168,76,0.4);line-height:2;">
+    <div>No.&nbsp;001 — 010</div>
+    <div>Portland, OR</div>
+    <div>MMXXVI</div>
   </div>
-  <p style="font-family:var(--font-display);font-size:18px;font-style:italic;color:rgba(201,168,76,.5);margin-bottom:20px;">Let your reputation speak for itself.</p>
-  <p class="cta-guar">Try it for 60 days — if it doesn't feel valuable, send it back &nbsp;·&nbsp; Free shipping both ways &nbsp;·&nbsp; No subscription</p>
-</section>
-</main>
-{% render 'proof-section-apps' %}
+  <!-- Pull quote bleed — right, vertical -->
+  <div aria-hidden="true" style="position:absolute;top:48px;right:6vw;font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(201,168,76,0.4);writing-mode:vertical-rl;transform:rotate(180deg);line-height:2;">
+    Reputation is the new storefront
+  </div>
+  <h2 class="final-cta-h2 reveal">
+    Your reputation is already there.<br>
+    <em style="font-style:italic;color:var(--gold)">Let the counter prove it.</em>
+  </h2>
+  <p class="final-cta-sub reveal reveal-delay-1">
+    10 founding merchant spots in Portland. $499 once. Reviews build themselves from day one.
+  </p>
+  <div class="hero-ctas reveal reveal-delay-2">
+    <a href="{{ product_url }}" class="btn-primary">
+      <span class="btn-primary-inner">Reserve Your PROOF — $499 ↗</span>
+    </a>
+  </div>
+  <div style="margin-top:32px;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:2px;" class="reveal reveal-delay-3">
+    FREE SHIPPING · 30-DAY PILOT GUARANTEE · SETUP IN 10 MIN
+  </div>
 
+  <!-- Sign-off rule + monogram — closes the document -->
+  <div class="reveal reveal-delay-3" style="margin:96px auto 0;max-width:780px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:28px;">
+    <div style="height:1px;background:linear-gradient(90deg,transparent 0%,rgba(201,168,76,0.35) 100%);"></div>
+    <div style="position:relative;width:54px;height:54px;display:grid;place-items:center;">
+      <div style="position:absolute;inset:0;border:1px solid rgba(201,168,76,0.45);border-radius:50%;"></div>
+      <div style="position:absolute;inset:6px;border:1px solid rgba(201,168,76,0.18);border-radius:50%;"></div>
+      <span style="font-family:Georgia,serif;font-size:24px;font-weight:600;color:var(--gold);letter-spacing:-0.02em;">P</span>
+    </div>
+    <div style="height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.35) 0%,transparent 100%);"></div>
+  </div>
+  <div class="reveal reveal-delay-3" style="margin-top:18px;text-align:center;font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.36em;text-transform:uppercase;color:rgba(201,168,76,0.55);">
+    Built in Portland · Shipped to your counter
+  </div>
+  <div class="reveal reveal-delay-3" style="margin:10px auto 0;text-align:center;font-family:Georgia,serif;font-style:italic;font-size:14px;color:var(--text-muted);max-width:38ch;line-height:1.6;">
+    Most of your happy customers never leave a review. Now they will.
+  </div>
+</section>
 {% schema %}
 {
   "name": "PROOF Final CTA",
-  "tag": "section",
+  "tag": "div",
   "class": "proof-section",
   "settings": [
     { "type": "product", "id": "product", "label": "Checkout product" },
-    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+    { "type": "url", "id": "demo_video_url", "label": "Demo / video link" }
   ],
   "blocks": [{ "type": "@app" }],
   "presets": [{ "name": "PROOF Final CTA" }]

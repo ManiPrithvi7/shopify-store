@@ -40,56 +40,70 @@ Create your own dev store at [dev.shopify.com/dashboard](https://dev.shopify.com
 
 You cannot develop against a store unless your logged-in account has CLI + staff access on it.
 
-## V23 landing page (homepage)
+## V40 landing page (homepage)
 
-The storefront homepage (`/`) uses the custom V23 design, not Dawn defaults.
+The storefront homepage (`/`) uses the **V40** design — 13 Theme Editor sections on `theme.proof` layout.
 
 | File | Purpose |
 |------|---------|
-| `layout/theme.proof.liquid` | Minimal layout — no Dawn header/footer; keeps `content_for_header` for apps |
-| `sections/proof-chrome.liquid` | Sticky buy bar + nav |
-| `sections/proof-hero.liquid` … `proof-fcta.liquid` | **22 V23 sections** — add/reorder in Theme Editor |
-| `sections/proof-app-zone.liquid` | Dedicated **App blocks** zone |
-| `snippets/proof-embed-rail.liquid` | Inbox / Sales Pop anchors (in `theme.proof` layout, not counted in 25-section limit) |
-| `sections/proof-footer.liquid` | V23 footer |
+| `layout/theme.proof.liquid` | Minimal layout, `<main>`, fonts, Lenis + landing JS |
+| `sections/proof-chrome.liquid` | Ambient orbs + V40 nav (`#main-nav`) |
+| `sections/proof-hero.liquid` … `proof-fcta.liquid` | **13 V40 sections** — add/reorder in Theme Editor |
+| `sections/proof-app-zone.liquid` | App blocks zone (after testimonials, before pricing) |
+| `snippets/proof-embed-rail.liquid` | Inbox / Sales Pop anchors (layout, not in section count) |
+| `sections/proof-footer.liquid` | V40 footer |
 | `sections/proof-product-apps.liquid` | Product page app block zone |
-| `assets/proof-landing.css` | V23 design system + app embed offsets |
-| `assets/proof-landing.js` | Simulator, sticky bar, FAQ, scroll reveal |
-| `snippets/proof-schema.liquid` | JSON-LD structured data |
-| `templates/index.json` | `"layout": "theme.proof"` + `proof-landing` section |
+| `assets/proof-landing.css` | V40 design system + app embed styles |
+| `assets/proof-landing.js` | Lenis, device tilt, FAQ, odometers |
+| `assets/proof-motion.mp4` | Hero video (extracted from V40 HTML) |
+| `snippets/proof-schema.liquid` | V40 JSON-LD (Product, FAQPage, Dataset) |
+| `templates/index.json` | `"layout": "theme.proof"` + 13 sections |
+| `archive/v23/` | Retired V23 sections (rollback only — not uploaded; Shopify forbids subfolders in `sections/`) |
 
-**Checkout product:** Theme Editor → Homepage → PROOF Landing → set **Checkout product** to `proof-display-test` (fallback URL: `/products/proof-display-test`).
+### Nav anchor IDs (V40)
+
+| Link | Target |
+|------|--------|
+| How it works | `#how-it-works` |
+| Screens | `#screens` |
+| Results | `#results` |
+| Pricing | `#pricing` |
+| FAQ | `#faq` |
+
+**Checkout product:** Theme Editor → any PROOF section → **Checkout product**, or **Theme settings → PROOF → Default checkout product** (`proof-display-test` fallback).
 
 **Preview with apps:** Use `http://127.0.0.1:9292` after `npm run dev` — not Vite-only `localhost:5173`.
 
-## App embeds + app blocks (inside V23 design)
-
-Homepage is split into **multiple Theme Editor sections** — you can add/reorder sections and drop app blocks into **PROOF App zone**.
+## App embeds + app blocks (inside V40 design)
 
 ### Step 1 — Global embeds (Inbox, Sales Pop)
 
 Theme Editor → **App embeds** → enable Shopify Inbox (+ Sales Pop).
 
-- **PROOF Embed rail** section shows labeled slots; they highlight when widgets load.
-- CSS in `proof-landing.css` keeps widgets clear of the sticky buy bar.
+- **PROOF Embed rail** shows labeled slots in the layout footer area.
+- CSS keeps widgets clear of page content (no sticky buy bar in V40).
 
 ### Step 2 — App blocks on homepage
 
-Theme Editor → Homepage → **PROOF App zone** → **Add block** → pick an app (e.g. Judge.me preview widget if available).
-
-Blocks render inside a gold-bordered card matching V23 tokens.
+Theme Editor → Homepage → **PROOF App zone** (between Testimonials and Pricing) → **Add block** → Judge.me or Sales Pop preview.
 
 ### Step 3 — Product page reviews
 
-Theme Editor → **Product** template → **PROOF Product apps** section → **Add block** → Judge.me.
-
-(You can also add Judge.me to `main-product` blocks if you prefer inline with buy box.)
+Theme Editor → **Product** template → **PROOF Product apps** → **Add block** → Judge.me.
 
 ### Theme setting
 
-**Theme settings → PROOF → Default checkout product** applies to all PROOF sections when a section has no product set.
+**Theme settings → PROOF → Default checkout product** applies when a section has no product set.
 
-After enabling, save. Do not `theme pull` Horizon JSON into this repo.
+## Content policy (V40 source of truth)
+
+- **Guarantee:** 30-day pilot / money-back on hardware
+- **Manufacturer:** Portland, OR
+- **JSON-LD URLs:** Shopify canonical (`shop.url` + product path)
+
+## Known launch gap
+
+V40 hides desktop nav links below ~960px with **no hamburger menu**. Mobile users rely on scroll + final CTA. Add a mobile menu in a fast-follow if needed.
 
 ## Theme JSON mismatch (upload errors)
 

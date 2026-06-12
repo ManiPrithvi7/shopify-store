@@ -9,88 +9,28 @@
       "type": "proof-hero",
       "settings": {}
     },
-    "proof-ticker-trust": {
-      "type": "proof-ticker-trust",
-      "settings": {}
-    },
-    "proof-counter-stack": {
-      "type": "proof-counter-stack",
-      "settings": {}
-    },
     "proof-video": {
       "type": "proof-video",
       "settings": {}
     },
-    "proof-verticals": {
-      "type": "proof-verticals",
+    "proof-ticker-trust": {
+      "type": "proof-ticker-trust",
       "settings": {}
     },
-    "proof-why": {
-      "type": "proof-why",
+    "proof-results": {
+      "type": "proof-results",
       "settings": {}
     },
-    "proof-gold-break": {
-      "type": "proof-gold-break",
+    "proof-how-it-works": {
+      "type": "proof-how-it-works",
       "settings": {}
     },
-    "proof-pattern-interrupt": {
-      "type": "proof-pattern-interrupt",
-      "settings": {}
-    },
-    "proof-category": {
-      "type": "proof-category",
-      "settings": {}
-    },
-    "proof-mechanism": {
-      "type": "proof-mechanism",
-      "settings": {}
-    },
-    "proof-before-after": {
-      "type": "proof-before-after",
-      "settings": {}
-    },
-    "proof-comparison": {
-      "type": "proof-comparison",
-      "settings": {}
-    },
-    "proof-placement": {
-      "type": "proof-placement",
-      "settings": {}
-    },
-    "proof-timeline": {
-      "type": "proof-timeline",
-      "settings": {}
-    },
-    "proof-simulator": {
-      "type": "proof-simulator",
-      "settings": {}
-    },
-    "proof-customers": {
-      "type": "proof-customers",
-      "settings": {}
-    },
-    "proof-pricing": {
-      "type": "proof-pricing",
-      "settings": {}
-    },
-    "proof-risk-reversal": {
-      "type": "proof-risk-reversal",
+    "proof-screens": {
+      "type": "proof-screens",
       "settings": {}
     },
     "proof-testimonials": {
       "type": "proof-testimonials",
-      "settings": {}
-    },
-    "proof-faq": {
-      "type": "proof-faq",
-      "settings": {}
-    },
-    "proof-aeo": {
-      "type": "proof-aeo",
-      "settings": {}
-    },
-    "proof-fcta": {
-      "type": "proof-fcta",
       "settings": {}
     },
     "proof-app-zone": {
@@ -101,6 +41,18 @@
         "layout": "single"
       }
     },
+    "proof-pricing": {
+      "type": "proof-pricing",
+      "settings": {}
+    },
+    "proof-faq": {
+      "type": "proof-faq",
+      "settings": {}
+    },
+    "proof-fcta": {
+      "type": "proof-fcta",
+      "settings": {}
+    },
     "proof-footer": {
       "type": "proof-footer",
       "settings": {}
@@ -109,28 +61,16 @@
   "order": [
     "proof-chrome",
     "proof-hero",
-    "proof-ticker-trust",
-    "proof-counter-stack",
     "proof-video",
-    "proof-verticals",
-    "proof-why",
-    "proof-gold-break",
-    "proof-pattern-interrupt",
-    "proof-category",
-    "proof-mechanism",
-    "proof-before-after",
-    "proof-comparison",
-    "proof-placement",
-    "proof-timeline",
-    "proof-simulator",
-    "proof-customers",
-    "proof-pricing",
-    "proof-risk-reversal",
+    "proof-ticker-trust",
+    "proof-results",
+    "proof-how-it-works",
+    "proof-screens",
     "proof-testimonials",
-    "proof-faq",
-    "proof-aeo",
-    "proof-fcta",
     "proof-app-zone",
+    "proof-pricing",
+    "proof-faq",
+    "proof-fcta",
     "proof-footer"
   ]
 }

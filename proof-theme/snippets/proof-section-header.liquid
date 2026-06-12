@@ -1,0 +1,8 @@
+{%- comment -%}
+  label, heading, subheading — pass as render params
+{%- endcomment -%}
+<span class="section-label reveal">{{ label }}</span>
+<h2 class="section-h2 reveal reveal-delay-1"{% if heading_id != blank %} id="{{ heading_id }}"{% endif %}>{{ heading }}</h2>
+{%- if subheading != blank -%}
+  <p class="section-sub reveal reveal-delay-2">{{ subheading }}</p>
+{%- endif -%}

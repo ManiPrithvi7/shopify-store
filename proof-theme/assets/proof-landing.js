@@ -1,202 +1,222 @@
-// ════════════════════════════════════════════════════════
-// PROOF Display V17 — Main JavaScript
-// All DOM queries wrapped in DOMContentLoaded/load guards
-// Pilot form code removed (pilot section removed from page)
-// ════════════════════════════════════════════════════════
+// PROOF Display V40 — landing interactions
 
-// ── PRODUCT URL (from Liquid data-product-url) ──
-function getProductUrl() {
-  const root = document.getElementById('proof-landing');
-  return (root && root.dataset.productUrl) || '#';
-}
+(function () {
+  'use strict';
 
-// ── SIMULATOR ──
-function calcSim() {
-  const curEl = document.getElementById('cur-reviews');
-  const dailyEl = document.getElementById('daily-cust');
-  const ratingEl = document.getElementById('cur-rating');
-  const bizNameEl = document.getElementById('biz-name');
-  const resultsEl = document.getElementById('sim-results');
-  const noteEl = document.getElementById('sim-note');
-  const ctaEl = document.getElementById('sim-cta');
-  const ctaSubEl = document.getElementById('sim-cta-sub');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isDesignMode = typeof Shopify !== 'undefined' && Shopify.designMode;
 
-  if (!curEl || !dailyEl || !ratingEl || !resultsEl) return;
+  let lenis = null;
 
-  const cur = parseInt(curEl.value) || 0;
-  const daily = parseInt(dailyEl.value) || 0;
-  const rating = parseFloat(ratingEl.value) || 4.0;
-  const bizName = bizNameEl && bizNameEl.value.trim() ? bizNameEl.value.trim() : null;
-  const bizLabel = bizName ? `For ${bizName}` : 'Your projection';
+  function initLenis() {
+    if (prefersReducedMotion || isDesignMode || typeof Lenis === 'undefined') return;
 
-  const baseMonthly = Math.round(daily * 30 * 0.003);
-  const proofMonthly = Math.round(daily * 30 * 0.007);
-  const after6mo = cur + (proofMonthly * 6);
-  const newRating = Math.min(5.0, rating + 0.15).toFixed(1);
-  const extraReviews = after6mo - cur;
+    lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      smoothWheel: true,
+    });
 
-  resultsEl.innerHTML = `
-    <div class="src"><div class="src-lbl">Without PROOF</div><div class="src-val">${baseMonthly}</div><div class="src-sub">reviews / month (est.)</div></div>
-    <div class="src hi"><div class="src-lbl">With PROOF</div><div class="src-val">${proofMonthly}</div><div class="src-sub">reviews / month (est.)</div></div>
-    <div class="src"><div class="src-lbl">6 months from now</div><div class="src-val">${after6mo}</div><div class="src-sub">${rating}★ → ${newRating}★ projected</div></div>
-  `;
-
-  if (noteEl) {
-    const productUrl = getProductUrl();
-    const personalised = bizName
-      ? `${bizLabel}: <strong style="color:var(--white)">+${extraReviews} more reviews</strong> in 6 months. That's ${after6mo} total — enough to rank significantly higher on Google Maps. <a href="${productUrl}">Order now →</a>`
-      : `That's <strong style="color:var(--white)">+${extraReviews} more reviews</strong> in 6 months — compounding your Google Maps ranking every week. <a href="${productUrl}">Order now to start →</a>`;
-    noteEl.innerHTML = personalised;
-  }
-
-  if (ctaEl && ctaSubEl) {
-    ctaEl.classList.add('show');
-    const ctaText = bizName
-      ? `${bizName} with ${after6mo} reviews and ${newRating}★ — that's a significantly stronger Google Maps presence. The counter is already there. Now it shows your reputation.`
-      : `${extraReviews} more reviews means a stronger Maps ranking, more trust in your space, and more first-time visitors who already trust you before they walk in.`;
-    ctaSubEl.textContent = ctaText;
-  }
-}
-
-// ── STICKY BUY BAR ──
-function initStickyBar() {
-  const stickyBar = document.getElementById('sticky-bar');
-  const heroEl = document.querySelector('.hero');
-
-  if (!stickyBar || !heroEl) return;
-
-  let heroBottom = 0;
-
-  function updateHeroBottom() {
-    heroBottom = heroEl.getBoundingClientRect().bottom + window.scrollY;
-  }
-
-  // Wait for layout to settle before measuring
-  requestAnimationFrame(() => {
-    updateHeroBottom();
-  });
-
-  window.addEventListener('resize', updateHeroBottom, { passive: true });
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > heroBottom - window.innerHeight) {
-      stickyBar.classList.add('visible');
-    } else {
-      stickyBar.classList.remove('visible');
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
-  }, { passive: true });
-}
-
-// ── NAV SCROLLED STATE ──
-// Announcement bar removed in V17 — nav sits at top:0 always
-function initNav() {
-  const nav = document.getElementById('nav');
-  if (!nav) return;
-
-  // Nav is always at top:0 (no announcement bar)
-  nav.style.top = '0px';
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  }, { passive: true });
-}
-
-// ── SCROLL REVEAL ──
-function initScrollReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
-    observer.observe(el);
-  });
-}
-
-// ── FAQ ACCORDION ──
-function initFaq() {
-  function toggleFaq(item) {
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      i.setAttribute('aria-expanded', 'false');
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      item.setAttribute('aria-expanded', 'true');
-    }
+    requestAnimationFrame(raf);
   }
 
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => toggleFaq(item));
-    item.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleFaq(item);
-      }
-    });
-  });
-}
+  function initNavScroll() {
+    const nav = document.getElementById('main-nav');
+    if (!nav) return;
 
-// ── VERTICAL CARDS ──
-function initVertCards() {
-  document.querySelectorAll('.vert-card').forEach(card => {
-    card.addEventListener('click', () => {
-      document.querySelectorAll('.vert-card').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-    });
-  });
-}
-
-// ── SIMULATOR INPUT LISTENERS ──
-function initSimulatorInputs() {
-  ['cur-reviews', 'daily-cust', 'cur-rating'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('input', calcSim);
-  });
-}
-
-// ── EMBED RAIL: mark slots when global app widgets are present ──
-function initEmbedRail() {
-  const chatSlot = document.querySelector('.proof-embed-slot--chat');
-  const salesSlot = document.querySelector('.proof-embed-slot--sales');
-  if (!chatSlot && !salesSlot) return;
-
-  function markActive() {
-    const hasChat =
-      document.getElementById('ShopifyChat') ||
-      document.querySelector('[id*="ShopifyChat"], [class*="inbox"], iframe[title*="chat" i]');
-    const hasSales = document.querySelector(
-      '[class*="sales-pop"], [id*="sales-pop"], [class*="SalesPop"], [data-sales-pop]'
+    window.addEventListener(
+      'scroll',
+      () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      },
+      { passive: true }
     );
 
-    if (chatSlot) chatSlot.classList.toggle('is-active', !!hasChat);
-    if (salesSlot) salesSlot.classList.toggle('is-active', !!hasSales);
+    nav.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -80 });
+        } else {
+          target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        }
+      });
+    });
   }
 
-  markActive();
-  const observer = new MutationObserver(markActive);
-  observer.observe(document.body, { childList: true, subtree: true });
-  window.setTimeout(markActive, 2000);
-  window.setTimeout(markActive, 5000);
-}
+  function initDeviceTilt() {
+    if (prefersReducedMotion) return;
+    const deviceScene = document.getElementById('deviceScene');
+    const device3d = document.getElementById('device3d');
+    if (!deviceScene || !device3d) return;
 
-// ── BOOT: Run everything after DOM is ready ──
-document.addEventListener('DOMContentLoaded', () => {
-  initNav();
-  initFaq();
-  initVertCards();
-  initSimulatorInputs();
-  initEmbedRail();
-  calcSim(); // initial render
-});
+    deviceScene.addEventListener('mousemove', (e) => {
+      const rect = deviceScene.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (rect.width / 2);
+      const dy = (e.clientY - cy) / (rect.height / 2);
+      device3d.style.transform = `rotateX(${8 - dy * 6}deg) rotateY(${-6 + dx * 8}deg)`;
+    });
 
-// Sticky bar needs layout measurements — run after full load
-window.addEventListener('load', () => {
-  initStickyBar();
-  initScrollReveal();
-});
+    deviceScene.addEventListener('mouseleave', () => {
+      device3d.style.transform = 'rotateX(8deg) rotateY(-6deg)';
+    });
+  }
+
+  function initScrollReveal() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => observer.observe(el));
+  }
+
+  function initQrStagger() {
+    if (prefersReducedMotion) return;
+    const qrSteps = document.querySelectorAll('.qr-step');
+    const qrStepsEl = document.getElementById('qrSteps');
+    if (!qrSteps.length || !qrStepsEl) return;
+
+    const qrObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            qrSteps.forEach((step, i) => {
+              setTimeout(() => step.classList.add('visible'), i * 220);
+            });
+            qrObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    qrObserver.observe(qrStepsEl);
+  }
+
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function animateOdometer(el, target, duration = 1800) {
+    const start = performance.now();
+    const decimalTarget = el.dataset.decimalTarget;
+
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = easeOutExpo(progress);
+
+      if (decimalTarget) {
+        const from = parseFloat(decimalTarget) - 0.4;
+        const val = (from + (parseFloat(decimalTarget) - from) * eased).toFixed(1);
+        el.textContent = val;
+      } else {
+        el.textContent = Math.round(target * eased);
+      }
+
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = decimalTarget || String(target);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initOdometers() {
+    if (prefersReducedMotion) return;
+
+    const odometerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target, 10);
+            if (el.dataset.decimalTarget) {
+              el.textContent = (parseFloat(el.dataset.decimalTarget) - 0.4).toFixed(1);
+            } else {
+              el.textContent = '0';
+            }
+            animateOdometer(el, target, 1800);
+            odometerObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    document.querySelectorAll('.odometer').forEach((el) => odometerObserver.observe(el));
+  }
+
+  function initSpotlightCards() {
+    if (prefersReducedMotion) return;
+
+    document.querySelectorAll('.spotlight-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mouse-x', `${x}%`);
+        card.style.setProperty('--mouse-y', `${y}%`);
+      });
+    });
+  }
+
+  function initFaq() {
+    function toggleFaq(button) {
+      const item = button.closest('.faq-item');
+      if (!item) return;
+      const panel = item.querySelector('.faq-a');
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      document.querySelectorAll('.faq-item').forEach((i) => {
+        const q = i.querySelector('.faq-q');
+        const a = i.querySelector('.faq-a');
+        if (q) q.setAttribute('aria-expanded', 'false');
+        if (a) a.hidden = true;
+      });
+
+      if (!isOpen && panel) {
+        button.setAttribute('aria-expanded', 'true');
+        panel.hidden = false;
+      }
+    }
+
+    document.querySelectorAll('.faq-q').forEach((button) => {
+      button.addEventListener('click', () => toggleFaq(button));
+    });
+
+    window.toggleFaq = toggleFaq;
+  }
+
+  function init() {
+    initLenis();
+    initNavScroll();
+    initDeviceTilt();
+    initScrollReveal();
+    initQrStagger();
+    initOdometers();
+    initSpotlightCards();
+    initFaq();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

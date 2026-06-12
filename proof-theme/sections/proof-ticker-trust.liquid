@@ -1,93 +1,53 @@
 {% render 'proof-checkout-url', section: section %}
-<!-- LIVE TICKER -->
-<div class="ticker">
-  <div class="ticker-lbl"><div class="ticker-dot"></div>Live activity</div>
-  <div style="overflow:hidden;flex:1;">
-    <div class="ticker-scroll">
-      <span class="ticker-item">📱 New 5★ review received<span class="ago">2 min ago</span><span class="sep"></span></span>
-      <span class="ticker-item">🎉 Milestone: 250 reviews — celebration flag deployed<span class="ago">1h ago</span><span class="sep"></span></span>
-      <span class="ticker-item">☕ 47 transactions today vs 39 last Tuesday<span class="ago">live</span><span class="sep"></span></span>
-      <span class="ticker-item">📱 New 5★ review received<span class="ago">8 min ago</span><span class="sep"></span></span>
-      <span class="ticker-item">🎉 Milestone: 300 reviews — celebration flag deployed<span class="ago">3 days ago</span><span class="sep"></span></span>
-      <span class="ticker-item">📱 Google Reviews feed synced<span class="ago">4 min ago</span><span class="sep"></span></span>
-      <!-- duplicate for loop -->
-      <span class="ticker-item">📱 New 5★ review received<span class="ago">2 min ago</span><span class="sep"></span></span>
-      <span class="ticker-item">🎉 Milestone: 250 reviews — celebration flag deployed<span class="ago">1h ago</span><span class="sep"></span></span>
-      <span class="ticker-item">☕ 47 transactions today vs 39 last Tuesday<span class="ago">live</span><span class="sep"></span></span>
-      <span class="ticker-item">📱 New 5★ review received<span class="ago">8 min ago</span><span class="sep"></span></span>
-      <span class="ticker-item">🎉 Milestone: 300 reviews — celebration flag deployed<span class="ago">3 days ago</span><span class="sep"></span></span>
-      <span class="ticker-item">📱 Google Reviews feed synced<span class="ago">4 min ago</span><span class="sep"></span></span>
+<div class="ticker-section">
+  <div class="ticker-track-wrap">
+    <!-- ROW 1: left scroll (fast) -->
+    <div class="ticker-track">
+      <div class="ticker-inner" id="ticker1">
+        <!-- repeated items -->
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "We doubled our review count in 3 weeks" <span class="ticker-name">· PORTLAND CAFÉ</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Customers tap it constantly" <span class="ticker-name">· NORTH LOOP SALON</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Looks incredible on the counter" <span class="ticker-name">· BOUTIQUE SHOP</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Best $499 I've spent on marketing" <span class="ticker-name">· COFFEE ROASTER</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "4.3 → 4.7 stars in two months" <span class="ticker-name">· PET GROOMER</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "47 reviews to 91 — no extra effort" <span class="ticker-name">· NAIL STUDIO</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "We doubled our review count in 3 weeks" <span class="ticker-name">· PORTLAND CAFÉ</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Customers tap it constantly" <span class="ticker-name">· NORTH LOOP SALON</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Looks incredible on the counter" <span class="ticker-name">· BOUTIQUE SHOP</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Best $499 I've spent on marketing" <span class="ticker-name">· COFFEE ROASTER</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "4.3 → 4.7 stars in two months" <span class="ticker-name">· PET GROOMER</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "47 reviews to 91 — no extra effort" <span class="ticker-name">· NAIL STUDIO</span></div>
+      </div>
+    </div>
+    <!-- ROW 2: right scroll (slow) -->
+    <div class="ticker-track ticker-track-reverse">
+      <div class="ticker-inner-reverse" id="ticker2">
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Set it up in 10 minutes, works forever" <span class="ticker-name">· BARBER SHOP</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Customers compete to be the 100th review" <span class="ticker-name">· PORTLAND BAKERY</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Our Google ranking jumped in 6 weeks" <span class="ticker-name">· WELLNESS STUDIO</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "The flag celebrates every new review" <span class="ticker-name">· SPECIALTY COFFEE</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "No QR codes. No asking. Just taps." <span class="ticker-name">· FLOWER SHOP</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "2.3× more reviews, zero extra work" <span class="ticker-name">· HAIR SALON</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Set it up in 10 minutes, works forever" <span class="ticker-name">· BARBER SHOP</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Customers compete to be the 100th review" <span class="ticker-name">· PORTLAND BAKERY</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "Our Google ranking jumped in 6 weeks" <span class="ticker-name">· WELLNESS STUDIO</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "The flag celebrates every new review" <span class="ticker-name">· SPECIALTY COFFEE</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "No QR codes. No asking. Just taps." <span class="ticker-name">· FLOWER SHOP</span></div>
+        <div class="ticker-item"><span class="ticker-star">★★★★★</span> "2.3× more reviews, zero extra work" <span class="ticker-name">· HAIR SALON</span></div>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- TRUST BAR -->
-
-<!-- ══ ETHICAL ALTERNATIVE ══ -->
-<div style="background:var(--surface-base);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);">
-  <div class="ethical-grid" style="max-width:1160px;margin:0 auto;padding:36px 60px;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;">
-
-    <!-- Left: the problem with fake reviews -->
-    <div style="padding:28px 40px 28px 0;border-right:1px solid rgba(255,255,255,.05);">
-      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(92,92,87,.45);margin-bottom:14px;">The shortcut that backfires</div>
-      <div style="display:flex;flex-direction:column;gap:8px;">
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:rgba(157,34,53,.5);font-size:12px;flex-shrink:0;margin-top:1px;">✕</span>
-          <span style="font-size:13px;color:rgba(184,184,173,.4);line-height:1.55;">Fake reviews get removed by Google — often taking your rating down with them</span>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:rgba(157,34,53,.5);font-size:12px;flex-shrink:0;margin-top:1px;">✕</span>
-          <span style="font-size:13px;color:rgba(184,184,173,.4);line-height:1.55;">Customers spot inauthentic patterns — generic language, sudden bursts, no context</span>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:rgba(157,34,53,.5);font-size:12px;flex-shrink:0;margin-top:1px;">✕</span>
-          <span style="font-size:13px;color:rgba(184,184,173,.4);line-height:1.55;">Google's policy violations can suspend your Business Profile entirely</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: the PROOF way -->
-    <div style="padding:28px 0 28px 40px;">
-      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,168,76,.45);margin-bottom:14px;">The way that actually works</div>
-      <div style="display:flex;flex-direction:column;gap:8px;">
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:rgba(82,183,136,.5);font-size:12px;flex-shrink:0;margin-top:1px;">✓</span>
-          <span style="font-size:13px;color:rgba(184,184,173,.55);line-height:1.55;">Real reviews from real customers — earned in the moment they're most likely to leave one</span>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:rgba(82,183,136,.5);font-size:12px;flex-shrink:0;margin-top:1px;">✓</span>
-          <span style="font-size:13px;color:rgba(184,184,173,.55);line-height:1.55;">No Google policy risk. No suspension risk. No reputation risk.</span>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:rgba(82,183,136,.5);font-size:12px;flex-shrink:0;margin-top:1px;">✓</span>
-          <span style="font-size:13px;color:rgba(184,184,173,.55);line-height:1.55;">Reviews that compound — each one makes the next more likely</span>
-        </div>
-      </div>
-      <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(201,168,76,.35);margin-top:20px;line-height:1.7;">PROOF doesn't manufacture reviews.<br>It earns them.</p>
-    </div>
-
-  </div>
-</div>
-
-<div class="trust-bar">
-  <div class="trust-item"><span class="trust-icon">✦</span>Business-grade hardware</div>
-  <div class="trust-item"><span class="trust-icon">✦</span>Plug-and-play WiFi setup</div>
-  <div class="trust-item"><span class="trust-icon">✦</span>Google · Instagram · Square</div>
-  <div class="trust-item"><span class="trust-icon">✦</span>60-day money-back guarantee</div>
-  <div class="trust-item"><span class="trust-icon">✦</span>Ships within 5 business days</div>
-</div>
-{% render 'proof-section-apps' %}
-
 {% schema %}
 {
-  "name": "PROOF Ticker & trust",
-  "tag": "section",
+  "name": "PROOF Ticker",
+  "tag": "div",
   "class": "proof-section",
   "settings": [
     { "type": "product", "id": "product", "label": "Checkout product" },
-    { "type": "url", "id": "demo_video_url", "label": "90-sec demo link" }
+    { "type": "url", "id": "demo_video_url", "label": "Demo / video link" }
   ],
   "blocks": [{ "type": "@app" }],
-  "presets": [{ "name": "PROOF Ticker & trust" }]
+  "presets": [{ "name": "PROOF Ticker" }]
 }
 {% endschema %}
